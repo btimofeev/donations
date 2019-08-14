@@ -486,10 +486,10 @@ class DonationsFragment : Fragment() {
          * @param bitcoinAddress      The address to receive bitcoin
          * @return DonationsFragment
          */
-        fun newInstance(debug: Boolean, googleEnabled: Boolean, googlePubkey: String, googleCatalog: Array<String>,
-                        googleCatalogValues: Array<String>, paypalEnabled: Boolean, paypalUser: String,
-                        paypalCurrencyCode: String, paypalItemName: String, flattrEnabled: Boolean,
-                        flattrProjectUrl: String, flattrUrl: String, bitcoinEnabled: Boolean, bitcoinAddress: String): DonationsFragment {
+        fun newInstance(debug: Boolean, googleEnabled: Boolean, googlePubkey: String?, googleCatalog: Array<String>?,
+                        googleCatalogValues: Array<String>?, paypalEnabled: Boolean, paypalUser: String?,
+                        paypalCurrencyCode: String?, paypalItemName: String?, flattrEnabled: Boolean,
+                        flattrProjectUrl: String?, flattrUrl: String?, bitcoinEnabled: Boolean, bitcoinAddress: String?): DonationsFragment {
             val donationsFragment = DonationsFragment()
             val args = Bundle()
 
