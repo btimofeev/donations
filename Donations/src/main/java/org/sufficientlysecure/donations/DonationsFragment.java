@@ -27,6 +27,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -77,7 +78,6 @@ public class DonationsFragment extends Fragment {
             "android.test.canceled", "android.test.refunded", "android.test.item_unavailable"};
 
     private Spinner mGoogleSpinner;
-    private TextView mFlattrUrlTextView;
 
     // Google Play helper object
     private IabHelper mHelper;
@@ -155,6 +155,8 @@ public class DonationsFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        assert getArguments() != null;
+
         mDebug = getArguments().getBoolean(ARG_DEBUG);
 
         mGoogleEnabled = getArguments().getBoolean(ARG_GOOGLE_ENABLED);
@@ -176,7 +178,7 @@ public class DonationsFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.donations__fragment, container, false);
     }
 
@@ -246,14 +248,9 @@ public class DonationsFragment extends Fragment {
                     if (mDebug)
                         Log.d(TAG, "Setup finished.");
 
-                    if (!result.isSuccess()) {
+                    if (!result.isSuccess())
                         openDialog(android.R.drawable.ic_dialog_alert, R.string.donations__google_android_market_not_supported_title,
                                 getString(R.string.donations__google_android_market_not_supported));
-                        return;
-                    }
-
-                    // Have we been disposed of in the meantime? If so, quit.
-                    if (mHelper == null) return;
                 }
             });
         }
@@ -294,7 +291,9 @@ public class DonationsFragment extends Fragment {
                     ClipboardManager clipboard =
                             (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
                     ClipData clip = ClipData.newPlainText(mBitcoinAddress, mBitcoinAddress);
-                    clipboard.setPrimaryClip(clip);
+                    if (clipboard != null) {
+                        clipboard.setPrimaryClip(clip);
+                    }
                     Toast.makeText(getActivity(), R.string.donations__bitcoin_toast_copy, Toast.LENGTH_SHORT).show();
                     return true;
                 }
@@ -460,7 +459,7 @@ public class DonationsFragment extends Fragment {
      * Build view for Flattr. see Flattr API for more information:
      * http://developers.flattr.net/button/
      */
-    @SuppressLint("SetJavaScriptEnabled")
+    @SuppressLint({"SetJavaScriptEnabled", "ClickableViewAccessibility", "SetTextI18n"})
     @TargetApi(11)
     private void buildFlattrView() {
         final FrameLayout mLoadingFrame;
@@ -530,7 +529,7 @@ public class DonationsFragment extends Fragment {
         String htmlStart = "<html> <head><style type='text/css'>*{color: #FFFFFF; background-color: transparent;}</style>";
 
         // set url of flattr link
-        mFlattrUrlTextView = getActivity().findViewById(R.id.donations__flattr_url);
+        TextView mFlattrUrlTextView = getActivity().findViewById(R.id.donations__flattr_url);
         mFlattrUrlTextView.setText("https://" + mFlattrUrl);
 
         String flattrJavascript = "<script type='text/javascript'>"
