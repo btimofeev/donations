@@ -24,7 +24,7 @@ android {
 }
 
 project.ext {
-    mavSiteUrl = "https://github.com/SufficientlySecure/donations"
+    mavSiteUrl = "https://github.com/penn5/donations"
     mavGitUrl = mavSiteUrl + '.git'
     mavProjectName = 'Donations'
     mavLibraryLicenses = ["Apache-2.0":'http://www.apache.org/licenses/LICENSE-2.0.txt']

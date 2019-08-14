@@ -8,22 +8,13 @@ It is used in projects, such as OpenKeychain, AdAway, FasterGPS, and NTPSync.
 
 ## How to use
 
-1. Add dependency to your build.gradle:
-    ```
-    repositories {
-        jcenter()
-    }
-
-    dependencies {
-        implementation 'org.sufficientlysecure:donations:2.6'
-    }
-    ```
-2. Instantiate the fragment where you want to use it. Check out the example app for this: [DonationsActivity.java](https://github.com/sufficientlysecure/donations/blob/master/example/src/main/java/org/sufficientlysecure/donations/example/DonationsActivity.java)
-3. Don't forget to pass through results in ``onActivityResult()`` back to the fragment as shown in [DonationsActivity.java](https://github.com/sufficientlysecure/donations/blob/master/example/src/main/java/org/sufficientlysecure/donations/example/DonationsActivity.java).
+1. Add dependency to your build.gradle: https://jitpack.io/#penn5/donations/v2.7
+2. Instantiate the fragment where you want to use it. Check out the example app for this: [DonationsActivity.java](https://github.com/penn5/donations/blob/master/example/src/main/java/org/penn5/donations/example/DonationsActivity.java)
+3. Don't forget to pass through results in ``onActivityResult()`` back to the fragment as shown in [DonationsActivity.java](https://github.com/penn5/donations/blob/master/example/src/main/java/org/penn5/donations/example/DonationsActivity.java).
 4. When publishing the app you must create managed in-app products for your app in the Google Play Store that matches the ones you defined in ``private static final String[] GOOGLE_CATALOG``
 
 ## Build flavors
-1. Keep in mind that Google forbits other payment methods besides Google Play. Thus, in the example, two build flavors are used. Check out [ExampleApp/build.gradle](https://github.com/sufficientlysecure/donations/blob/master/example/build.gradle). The build script adds ``DONATIONS_GOOGLE`` to the auto generated BuildConfig.java.
+1. Keep in mind that Google forbits other payment methods besides Google Play. Thus, in the example, two build flavors are used. Check out [ExampleApp/build.gradle](https://github.com/penn5/donations/blob/master/example/build.gradle). The build script adds ``DONATIONS_GOOGLE`` to the auto generated BuildConfig.java.
 2. Add ``<uses-permission android:name="android.permission.INTERNET" />`` to product flavors that use Flattr
 3. Add ``<uses-permission android:name="com.android.vending.BILLING" />`` to product flavors that use Google Play In-app billing
 
@@ -32,7 +23,7 @@ It is used in projects, such as OpenKeychain, AdAway, FasterGPS, and NTPSync.
 
 | Product Flavor: Google | Product Flavor: Fdroid |
 |------------------------|------------------------|
-| ![Screenshot](https://github.com/sufficientlysecure/donations/raw/master/screenshot-google.png) | ![Screenshot](https://github.com/sufficientlysecure/donations/raw/master/screenshot-fdroid.png) |
+| ![Screenshot](https://github.com/penn5/donations/raw/master/screenshot-google.png) | ![Screenshot](https://github.com/penn5/donations/raw/master/screenshot-fdroid.png) |
 
 ## Translations
 
@@ -48,6 +39,10 @@ Help translating on [Transifex](https://www.transifex.com/privacyapps/donations/
 ## Add the lib to your project
 
 ## Changelog
+### 2.7
+* Update targetSdk & gradle
+* Cleanup code
+
 ### 2.6
 * Force Intent chooser for PayPal
 * Min SDK 14
