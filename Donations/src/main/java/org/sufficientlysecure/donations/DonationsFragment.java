@@ -26,6 +26,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -39,6 +40,7 @@ import android.view.ViewStub;
 import android.webkit.WebView;
 import android.webkit.WebView.HitTestResult;
 import android.webkit.WebViewClient;
+import android.webkit.WebResourceRequest;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -476,11 +478,29 @@ public class DonationsFragment extends Fragment {
             /**
              * Open all links in browser, not in webview
              */
+            @SuppressWarnings("deprecation")
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String urlNewString) {
                 try {
                     view.getContext().startActivity(
                             new Intent(Intent.ACTION_VIEW, Uri.parse(urlNewString)));
+                } catch (ActivityNotFoundException e) {
+                    openDialog(android.R.drawable.ic_dialog_alert, R.string.donations__alert_dialog_title,
+                            getString(R.string.donations__alert_dialog_no_browser));
+                }
+
+                return false;
+            }
+            /**
+             * Support N properly
+             * https://stackoverflow.com/a/38484061/5509575
+             */
+            @TargetApi(Build.VERSION_CODES.N)
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest urlNewRequest) {
+                try {
+                    view.getContext().startActivity(
+                            new Intent(Intent.ACTION_VIEW, urlNewRequest.getUrl()));
                 } catch (ActivityNotFoundException e) {
                     openDialog(android.R.drawable.ic_dialog_alert, R.string.donations__alert_dialog_title,
                             getString(R.string.donations__alert_dialog_no_browser));
