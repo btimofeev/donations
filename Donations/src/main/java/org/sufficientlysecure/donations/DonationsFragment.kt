@@ -32,14 +32,15 @@ import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.*
-import org.sufficientlysecure.donations.google.util.IabHelper
+import org.sufficientlysecure.donations.util.GoogleIABHelper
+import org.sufficientlysecure.donations.util.GoogleIABListener
 
 class DonationsFragment : Fragment() {
 
     private var mGoogleSpinner: Spinner? = null
 
     // Google Play helper object
-    private var mHelper: IabHelper? = null
+    private var mHelper: GoogleIABHelper? = null
 
     private var mDebug = false
 
@@ -53,40 +54,21 @@ class DonationsFragment : Fragment() {
     private var mBitcoinAddress: String? = null
 
     // Callback for when a purchase is finished
-    private var mPurchaseFinishedListener: IabHelper.OnIabPurchaseFinishedListener = IabHelper.OnIabPurchaseFinishedListener { result, purchase ->
-        if (mDebug)
-            Log.d(TAG, "Purchase finished: $result, purchase: $purchase")
-
-        // if we were disposed of in the meantime, quit.
-        if (mHelper == null) return@OnIabPurchaseFinishedListener
-
-        if (result.isSuccess) {
+    private val mGoogleCallback = object : GoogleIABListener {
+        override fun donationFailed() {
+            openDialog(android.R.drawable.ic_dialog_alert,
+                    R.string.donations__google_android_market_not_supported_title,
+                    getString(R.string.donations__google_android_market_not_supported))
+        }
+        override fun donationSuccess(productId: String) {
             if (mDebug)
-                Log.d(TAG, "Purchase successful.")
-
-            // directly consume in-app purchase, so that people can donate multiple times
-            mHelper!!.consumeAsync(purchase, mConsumeFinishedListener)
+                Log.d(TAG, "Purchase finished: $productId")
 
             // show thanks openDialog
             openDialog(android.R.drawable.ic_dialog_info, R.string.donations__thanks_dialog_title,
                     getString(R.string.donations__thanks_dialog))
+
         }
-    }
-
-    // Called when consumption is complete
-    private var mConsumeFinishedListener: IabHelper.OnConsumeFinishedListener = IabHelper.OnConsumeFinishedListener { purchase, result ->
-        if (mDebug)
-            Log.d(TAG, "Consumption finished. Purchase: $purchase, result: $result")
-
-        // if we were disposed of in the meantime, quit.
-        if (mHelper == null) return@OnConsumeFinishedListener
-
-        if (result.isSuccess) {
-            if (mDebug)
-                Log.d(TAG, "Consumption successful. Provisioning.")
-        }
-        if (mDebug)
-            Log.d(TAG, "End consumption flow.")
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -166,23 +148,6 @@ class DonationsFragment : Fragment() {
             // Create the helper, passing it our context and the public key to verify signatures with
             if (mDebug)
                 Log.d(TAG, "Creating IAB helper.")
-            mHelper = IabHelper(activity!!, it.first)
-
-            // enable debug logging (for a production application, you should set this to false).
-            mHelper!!.enableDebugLogging(mDebug)
-
-            // Start setup. This is asynchronous and the specified listener
-            // will be called once setup completes.
-            if (mDebug)
-                Log.d(TAG, "Starting setup.")
-            mHelper!!.startSetup { result ->
-                if (mDebug)
-                    Log.d(TAG, "Setup finished.")
-
-                if (!result.isSuccess)
-                    openDialog(android.R.drawable.ic_dialog_alert, R.string.donations__google_android_market_not_supported_title,
-                            getString(R.string.donations__google_android_market_not_supported))
-            }
         }
 
         /* PayPal */
@@ -234,35 +199,16 @@ class DonationsFragment : Fragment() {
         if (mDebug)
             Log.d(TAG, "selected item in spinner: $index")
 
+        if (mHelper == null)
+            mHelper = GoogleIABHelper(activity!!, mGoogleCallback)
+
         if (mDebug) {
             // when debugging, choose android.test.x item
-            mHelper!!.launchPurchaseFlow(activity,
-                    CATALOG_DEBUG[index], IabHelper.ITEM_TYPE_INAPP,
-                    0, mPurchaseFinishedListener, null)
+            mHelper!!.makePayment(CATALOG_DEBUG[index])
         } else {
-            mHelper!!.launchPurchaseFlow(activity,
-                    catalogItems[index], IabHelper.ITEM_TYPE_INAPP,
-                    0, mPurchaseFinishedListener, null)
+            mHelper!!.makePayment(catalogItems[index])
         }
     }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if (mDebug)
-            Log.d(TAG, "onActivityResult($requestCode,$resultCode,$data")
-        if (mHelper == null) return
-
-        // Pass on the fragment result to the helper for handling
-        if (!mHelper!!.handleActivityResult(requestCode, resultCode, data)) {
-            // not handled, so handle it ourselves (here's where you'd
-            // perform any handling of activity results not related to in-app
-            // billing...
-            super.onActivityResult(requestCode, resultCode, data)
-        } else {
-            if (mDebug)
-                Log.d(TAG, "onActivityResult handled by IABUtil.")
-        }
-    }
-
 
     /**
      * Donate button with PayPal by opening browser with defined URL For possible parameters see:
