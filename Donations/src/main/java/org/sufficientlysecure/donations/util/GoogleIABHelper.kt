@@ -119,16 +119,18 @@ class GoogleIABHelper(private val context: Activity, private val listener: Googl
                     if (billingResult.responseCode != BillingClient.BillingResponseCode.OK)
                         listener.donationFailed()
                     else {
-                        if (skuDetails.size != 1)
-                            throw RuntimeException("skuDetails.size != 1")
-                        val params = BillingFlowParams.newBuilder()
-                                .setSkuDetails(skuDetails[0])
-                                .build()
-                        ensureConnected {
-                            billingClient.launchBillingFlow(context, params)
+                        if (skuDetails.size != 1) {
+                            Log.e(tag, "No SKU available for donation. Check you are passing correct productId and that it is valid on Google servers")
+                            listener.donationFailed()
+                        } else {
+                            val params = BillingFlowParams.newBuilder()
+                                    .setSkuDetails(skuDetails[0])
+                                    .build()
+                            ensureConnected {
+                                billingClient.launchBillingFlow(context, params)
+                            }
                         }
                     }
-
                 }
             }
     }
