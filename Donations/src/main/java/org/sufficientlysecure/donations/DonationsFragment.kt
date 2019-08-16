@@ -410,7 +410,7 @@ class DonationsFragment : Fragment() {
         private const val TAG = "Donations Library"
 
         // http://developer.android.com/google/play/billing/billing_testing.html
-        private val CATALOG_DEBUG = arrayOf("android.test.purchased", "android.test.canceled", "android.test.refunded", "android.test.item_unavailable")
+        private val CATALOG_DEBUG = arrayOf("android.test.purchased", "android.test.canceled", "android.test.refunded", "android.test.item_unavailable", "android.test.this_does_not_exist")
 
         /**
          * Instantiate DonationsFragment.
