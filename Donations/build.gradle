@@ -17,6 +17,7 @@ android {
         targetSdkVersion 29
         versionCode 9
         versionName '2.7'
+        consumerProguardFiles 'proguard-rules.pro'
     }
 
     // Workaround until translation issues are fixed

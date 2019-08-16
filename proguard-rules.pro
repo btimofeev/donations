@@ -1,0 +1,1 @@
+-keepnames public class org.sufficientlysecure.donations.DonationsFragment { *; }
