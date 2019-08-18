@@ -115,11 +115,11 @@ class GoogleIABHelper(private val context: Activity, private val listener: Googl
                     .build()
             ensureConnected {
                 billingClient.querySkuDetailsAsync(skuDetails) {
-                    billingResult: BillingResult, skuDetails: MutableList<SkuDetails> ->
+                    billingResult: BillingResult, skuDetails: MutableList<SkuDetails>? ->
                     if (billingResult.responseCode != BillingClient.BillingResponseCode.OK)
                         listener.donationFailed()
                     else {
-                        if (skuDetails.size != 1) {
+                        if (skuDetails?.size != 1) {
                             Log.e(tag, "No SKU available for donation. Check you are passing correct productId and that it is valid on Google servers")
                             listener.donationFailed()
                         } else {
