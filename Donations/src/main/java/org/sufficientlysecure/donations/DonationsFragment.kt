@@ -56,18 +56,24 @@ class DonationsFragment : Fragment() {
     // Callback for when a purchase is finished
     private val mGoogleCallback = object : GoogleIABListener {
         override fun donationFailed() {
-            openDialog(android.R.drawable.ic_dialog_alert,
-                    R.string.donations__google_android_market_not_supported_title,
-                    getString(R.string.donations__google_android_market_not_supported))
+            Log.e(TAG, "Donation failed")
+            if (isAdded())
+                openDialog(android.R.drawable.ic_dialog_alert,
+                        R.string.donations__google_android_market_not_supported_title,
+                        getString(R.string.donations__google_android_market_not_supported))
+            else
+                Log.e(TAG, "Not attached to activity")
         }
         override fun donationSuccess(productId: String) {
             if (mDebug)
                 Log.d(TAG, "Purchase finished: $productId")
 
-            // show thanks openDialog
-            openDialog(android.R.drawable.ic_dialog_info, R.string.donations__thanks_dialog_title,
-                    getString(R.string.donations__thanks_dialog))
-
+            if (isAdded()) {
+                // show thanks openDialog
+                openDialog(android.R.drawable.ic_dialog_info, R.string.donations__thanks_dialog_title,
+                        getString(R.string.donations__thanks_dialog))
+            else
+                Log.e(TAG, "Not attached to activity")
         }
     }
 
