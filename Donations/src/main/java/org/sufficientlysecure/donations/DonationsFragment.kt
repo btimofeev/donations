@@ -72,7 +72,7 @@ class DonationsFragment : Fragment() {
                 // show thanks openDialog
                 openDialog(android.R.drawable.ic_dialog_info, R.string.donations__thanks_dialog_title,
                         getString(R.string.donations__thanks_dialog))
-            else
+            } else
                 Log.e(TAG, "Not attached to activity")
         }
     }
