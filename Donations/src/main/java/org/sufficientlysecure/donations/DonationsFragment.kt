@@ -150,10 +150,6 @@ class DonationsFragment : Fragment() {
                             getString(R.string.donations__google_android_market_not_supported))
                 }
             }
-
-            // Create the helper, passing it our context and the public key to verify signatures with
-            if (mDebug)
-                Log.d(TAG, "Creating IAB helper.")
         }
 
         /* PayPal */
