@@ -140,7 +140,7 @@ class DonationsFragment : Fragment() {
                     R.id.donations__google_android_market_donate_button)
             btGoogle.setOnClickListener { _ ->
                 try {
-                    donateGoogleOnClick(it.second.values.toList())
+                    donateGoogleOnClick(it.second.keys.toList())
                 } catch (e: IllegalStateException) {     // In some devices, it is impossible to setup IAB Helper
                     if (mDebug)
                     // and this exception is thrown, being almost "impossible"

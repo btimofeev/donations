@@ -109,6 +109,7 @@ class GoogleIABHelper(private val context: Activity, private val listener: Googl
     }
 
     private fun makePaymentInternal(productId: String) {
+            Log.d(tag, "Getting SKUs for $productId")
             val skuDetails = SkuDetailsParams.newBuilder()
                     .setSkusList(listOf(productId))
                     .setType(BillingClient.SkuType.INAPP)
@@ -120,7 +121,7 @@ class GoogleIABHelper(private val context: Activity, private val listener: Googl
                         listener.donationFailed()
                     else {
                         if (skuDetails?.size != 1) {
-                            Log.e(tag, "No SKU available for donation. Check you are passing correct productId and that it is valid on Google servers")
+                            Log.e(tag, "No SKU available for donation. Check you are passing correct productId and that it is valid on Google servers $skuDetails")
                             listener.donationFailed()
                         } else {
                             val params = BillingFlowParams.newBuilder()
