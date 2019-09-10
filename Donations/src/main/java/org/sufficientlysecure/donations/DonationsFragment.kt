@@ -113,18 +113,18 @@ class DonationsFragment : Fragment() {
 
         /* Flattr */
         mFlattr?.let {
-            val flattrViewStub = activity!!.findViewById<ViewStub>(R.id.donations__flattr_stub)
+            val flattrViewStub = view!!.findViewById<ViewStub>(R.id.donations__flattr_stub)
             flattrViewStub.inflate()
             buildFlattrView(it.first, it.second)
         }
 
         /* Google */
         mGoogle?.let {
-            val googleViewStub = activity!!.findViewById<ViewStub>(R.id.donations__google_stub)
+            val googleViewStub = view!!.findViewById<ViewStub>(R.id.donations__google_stub)
             googleViewStub.inflate()
 
             // choose donation amount
-            mGoogleSpinner = activity!!.findViewById(
+            mGoogleSpinner = view!!.findViewById(
                     R.id.donations__google_android_market_spinner)
             val adapter = if (mDebug) {
                 ArrayAdapter(activity!!,
@@ -136,7 +136,7 @@ class DonationsFragment : Fragment() {
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             mGoogleSpinner!!.adapter = adapter
 
-            val btGoogle = activity!!.findViewById<Button>(
+            val btGoogle = view!!.findViewById<Button>(
                     R.id.donations__google_android_market_donate_button)
             btGoogle.setOnClickListener { _ ->
                 try {
@@ -154,20 +154,20 @@ class DonationsFragment : Fragment() {
 
         /* PayPal */
         mPaypal?.let {
-            val paypalViewStub = activity!!.findViewById<ViewStub>(R.id.donations__paypal_stub)
+            val paypalViewStub = view!!.findViewById<ViewStub>(R.id.donations__paypal_stub)
             paypalViewStub.inflate()
 
-            val btPayPal = activity!!.findViewById<Button>(R.id.donations__paypal_donate_button)
+            val btPayPal = view!!.findViewById<Button>(R.id.donations__paypal_donate_button)
             btPayPal.setOnClickListener { _ -> donatePayPalOnClick(it) }
         }
 
         /* Bitcoin */
         mBitcoinAddress?.let {
             // inflate bitcoin view into stub
-            val bitcoinViewStub = activity!!.findViewById<View>(R.id.donations__bitcoin_stub) as ViewStub
+            val bitcoinViewStub = view!!.findViewById<View>(R.id.donations__bitcoin_stub) as ViewStub
             bitcoinViewStub.inflate()
 
-            val btBitcoin = activity!!.findViewById<Button>(R.id.donations__bitcoin_button)
+            val btBitcoin = view!!.findViewById<Button>(R.id.donations__bitcoin_button)
             btBitcoin.setOnClickListener { _ -> donateBitcoinOnClick(it) }
             btBitcoin.setOnLongClickListener {
                 val clipboard = activity!!.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
@@ -273,8 +273,8 @@ class DonationsFragment : Fragment() {
     @SuppressLint("SetJavaScriptEnabled", "ClickableViewAccessibility", "SetTextI18n")
     @TargetApi(11)
     private fun buildFlattrView(projectUrl: String, url: String) {
-        val mLoadingFrame = activity!!.findViewById<FrameLayout>(R.id.donations__loading_frame)
-        val mFlattrWebview = activity!!.findViewById<WebView>(R.id.donations__flattr_webview)
+        val mLoadingFrame = view!!.findViewById<FrameLayout>(R.id.donations__loading_frame)
+        val mFlattrWebview = view!!.findViewById<WebView>(R.id.donations__flattr_webview)
 
         // disable hardware acceleration for this webview to get transparent background working
         mFlattrWebview.setLayerType(View.LAYER_TYPE_SOFTWARE, null)
@@ -352,7 +352,7 @@ class DonationsFragment : Fragment() {
         val htmlStart = "<html> <head><style type='text/css'>*{color: #FFFFFF; background-color: transparent;}</style>"
 
         // set url of flattr link
-        val mFlattrUrlTextView = activity!!.findViewById<TextView>(R.id.donations__flattr_url)
+        val mFlattrUrlTextView = view!!.findViewById<TextView>(R.id.donations__flattr_url)
         mFlattrUrlTextView.text = "https://$url"
 
         val flattrJavascript = ("<script type='text/javascript'>"
