@@ -4,7 +4,7 @@
     <string name="donations__flattr">"فِلااتر"</string>
     <string name="donations__description">"هل وجدت البرنامج مفيدًا؟
 أدعم البرنامج من خلال إرسال تبرع للمطورين"</string>
-    <string name="donations__flattr_description"></string>
+    <string name="donations__flattr_description">"رسوم فلاتر 10٪"</string>
     <string name="donations__google_android_market">"Google Play سوق"</string>
     <string name="donations__google_android_market_not_supported_title">"دعم التبرع من داخل البرنامج غير مدعوم."</string>
     <string name="donations__google_android_market_not_supported">"دعم التبرع من داخل البرنامج غير مدعوم. هل سوق Google Play مثبت بشكل صحيح?"</string>
@@ -17,8 +17,8 @@
     <string name="donations__thanks_dialog">"شكراً للتبرع نحن نقدر ذلك "</string>
     <string name="donations__alert_dialog_title">"حدث خطأ"</string>
     <string name="donations__alert_dialog_no_browser">"لا يوجد متصفح لفتح الموقع!"</string>
-    <string name="donations__bitcoin"></string>
-    <string name="donations__bitcoin_description"></string>
-    <string name="donations__bitcoin_send_bitcoin_button"></string>
-    <string name="donations__bitcoin_toast_copy"></string>
+    <string name="donations__bitcoin">"بيتكوين"</string>
+    <string name="donations__bitcoin_description">"إرسال أي مبلغ من البيتكوين إلى المطور. اضغط مع الاستمرار على زر لنسخ العنوان."</string>
+    <string name="donations__bitcoin_send_bitcoin_button">"إرسال بيتكوين!"</string>
+    <string name="donations__bitcoin_toast_copy">"تم نسخ عنوان البيتكوين إلى الحافظة!"</string>
 </resources>

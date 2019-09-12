@@ -2,12 +2,13 @@
 <resources>
     <string name="donations__button_close">"Cerrar"</string>
     <string name="donations__flattr">"Flattr"</string>
-    <string name="donations__description"></string>
-    <string name="donations__flattr_description"></string>
+    <string name="donations__description">"¿Le resulta útil esta aplicación?
+¡Apoye su desarrollo enviando una donación al desarrollador!"</string>
+    <string name="donations__flattr_description">"Flattr cobra una tarifa del 10%"</string>
     <string name="donations__google_android_market">"Google Play Store"</string>
     <string name="donations__google_android_market_not_supported_title">"No se admiten donaciones desde la aplicación."</string>
     <string name="donations__google_android_market_not_supported">"No se admiten Donaciones desde la aplicación (In-App). ¿Está instalado Google Play Store correctamente?"</string>
-    <string name="donations__google_android_market_description"></string>
+    <string name="donations__google_android_market_description">"Google cobra una tarifa del 30%"</string>
     <string name="donations__google_android_market_donate_button">"¡Donar!"</string>
     <string name="donations__google_android_market_text">"¿Cuánto?"</string>
     <string name="donations__paypal">"PayPal"</string>
@@ -17,8 +18,8 @@
 ¡Se lo agradezco mucho!"</string>
     <string name="donations__alert_dialog_title">"Se produjó un error"</string>
     <string name="donations__alert_dialog_no_browser">"¡No se encontró ningún navegador para abrir un sitio web!"</string>
-    <string name="donations__bitcoin"></string>
-    <string name="donations__bitcoin_description"></string>
-    <string name="donations__bitcoin_send_bitcoin_button"></string>
-    <string name="donations__bitcoin_toast_copy"></string>
+    <string name="donations__bitcoin">"Bitcoin"</string>
+    <string name="donations__bitcoin_description">"Enviar cualquier cantidad de bitcoin al desarrollador. Mantenga presionado el botón para copiar la dirección."</string>
+    <string name="donations__bitcoin_send_bitcoin_button">"¡Envía bitcoins!"</string>
+    <string name="donations__bitcoin_toast_copy">"¡La dirección de Bitcoin se ha copiado en el portapapeles!"</string>
 </resources>
