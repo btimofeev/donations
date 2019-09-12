@@ -359,6 +359,9 @@ class DonationsFragment : Fragment() {
                         flattrUrl: String?, bitcoinEnabled: Boolean,
                         bitcoinAddress: String?): DonationsFragment {
 
+            if (flattrEnabled || flattrProjectUrl != null || flattrUrl != null)
+                Log.e(TAG, "You can't use flattr, their API is gone!")
+            
             return newInstance(debug, googleEnabled, googlePubkey, googleCatalog,
                     googleCatalogValues, paypalEnabled, paypalUser, paypalCurrencyCode,
                     paypalItemName, bitcoinEnabled, bitcoinAddress)
