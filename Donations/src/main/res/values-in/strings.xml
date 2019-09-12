@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="donations__button_close">"Tutup"</string>
-    <string name="donations__flattr">"Flattr"</string>
     <string name="donations__description">"Apakah menurut Anda aplikasi ini bermanfaat?
 Dukung pengembangannya dengan mengirimkan donasi ke pengembang!"</string>
-    <string name="donations__flattr_description">"Flattr membebankan biaya 10%%"</string>
     <string name="donations__google_android_market">"Google Play Store"</string>
     <string name="donations__google_android_market_not_supported_title">"Donasi In-App tidak didukung."</string>
     <string name="donations__google_android_market_not_supported">"Donasi di dalam aplikasi tidak didukung. apakah Google Play Store terpasang dengan benar?"</string>
-    <string name="donations__google_android_market_description">"Google membebankan biaya 30%%"</string>
+    <string name="donations__google_android_market_description">"Google membebankan biaya 30%"</string>
     <string name="donations__google_android_market_donate_button">"Donasi!"</string>
     <string name="donations__google_android_market_text">"Berapa banyak?"</string>
     <string name="donations__paypal">"PayPal"</string>

@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="donations__button_close">"Avsluta"</string>
-    <string name="donations__flattr">"Flattr"</string>
     <string name="donations__description">"Tycker du att den här applikationen är användbar?
 Stöd dess utveckling genom att skicka en donation till utvecklaren!"</string>
-    <string name="donations__flattr_description">"Flattr tar ut en avgift på 10%%"</string>
     <string name="donations__google_android_market">"Google Play Butik"</string>
     <string name="donations__google_android_market_not_supported_title">"In-App-donationer stödjs inte."</string>
     <string name="donations__google_android_market_not_supported">"In-App-donationer stödjs inte. Är Google Play Butik installerad korrekt?"</string>
-    <string name="donations__google_android_market_description">"Google tar ut en avgift på 30%%"</string>
+    <string name="donations__google_android_market_description">"Google tar ut en avgift på 30%"</string>
     <string name="donations__google_android_market_donate_button">"Donera!"</string>
     <string name="donations__google_android_market_text">"Hur mycket?"</string>
     <string name="donations__paypal">"PayPal"</string>

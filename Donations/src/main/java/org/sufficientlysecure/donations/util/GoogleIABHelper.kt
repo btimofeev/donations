@@ -4,7 +4,6 @@ import android.app.Activity
 import android.os.Handler
 import android.util.Log
 import com.android.billingclient.api.*
-import java.util.concurrent.FutureTask
 
 class GoogleIABHelper(private val context: Activity, private val listener: GoogleIABListener) : PurchasesUpdatedListener {
 

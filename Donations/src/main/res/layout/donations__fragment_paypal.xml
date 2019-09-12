@@ -1,37 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:layout_height="wrap_content" >
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/donations__paypal_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/donations__paypal"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/donations__paypal_description"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1.0"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="5dp"
-            android:text="@string/donations__paypal"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="5dp"
-            android:paddingTop="5dp"
-            android:text="@string/donations__paypal_description"
-            android:textAppearance="@android:style/TextAppearance.Small" />
-    </LinearLayout>
+        android:text="@string/donations__paypal_description"
+        android:textAppearance="@android:style/TextAppearance.Small"
+        app:layout_constraintEnd_toStartOf="@id/donations__paypal_donate_button"
+        app:layout_constraintTop_toBottomOf="@id/donations__paypal_title"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/donations__paypal_donate_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginLeft="8dp"
-        android:text="@string/donations__google_android_market_donate_button" />
+        android:text="@string/donations__google_android_market_donate_button"
+        app:layout_constraintStart_toEndOf="@id/donations__paypal_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/donations__paypal_title" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

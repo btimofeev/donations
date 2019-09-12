@@ -17,21 +17,22 @@
 
 package org.sufficientlysecure.donations
 
-import android.annotation.SuppressLint
 import android.annotation.TargetApi
 import android.app.AlertDialog
 import android.content.*
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.util.Log
 import android.util.Pair
-import android.view.*
-import android.webkit.WebResourceRequest
-import android.webkit.WebView
-import android.webkit.WebViewClient
-import android.widget.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.view.ViewStub
+import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.Spinner
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import org.sufficientlysecure.donations.util.GoogleIABHelper
 import org.sufficientlysecure.donations.util.GoogleIABListener
 
@@ -48,8 +49,6 @@ class DonationsFragment : Fragment() {
     private var mGoogle: Pair<String, Map<String, String>>? = null
     // Triple<email, currencyCode, itemName>
     private var mPaypal: Triple<String, String, String>? = null
-    // Pair<projectUrl, url>
-    private var mFlattr: Pair<String, String>? = null
     // address
     private var mBitcoinAddress: String? = null
 
@@ -57,8 +56,8 @@ class DonationsFragment : Fragment() {
     private val mGoogleCallback = object : GoogleIABListener {
         override fun donationFailed() {
             Log.e(TAG, "Donation failed")
-            if (isAdded())
-                openDialog(android.R.drawable.ic_dialog_alert,
+            if (isAdded)
+                openDialog(R.drawable.alert,
                         R.string.donations__google_android_market_not_supported_title,
                         getString(R.string.donations__google_android_market_not_supported))
             else
@@ -68,9 +67,9 @@ class DonationsFragment : Fragment() {
             if (mDebug)
                 Log.d(TAG, "Purchase finished: $productId")
 
-            if (isAdded()) {
+            if (isAdded) {
                 // show thanks openDialog
-                openDialog(android.R.drawable.ic_dialog_info, R.string.donations__thanks_dialog_title,
+                openDialog(R.drawable.briefcase_check, R.string.donations__thanks_dialog_title,
                         getString(R.string.donations__thanks_dialog))
             } else
                 Log.e(TAG, "Not attached to activity")
@@ -95,10 +94,6 @@ class DonationsFragment : Fragment() {
                     arguments!!.getString(ARG_PAYPAL_CURRENCY_CODE)!!,
                     arguments!!.getString(ARG_PAYPAL_ITEM_NAME)!!)
 
-        if (arguments!!.getBoolean(ARG_FLATTR_ENABLED))
-            mFlattr = Pair(arguments!!.getString(ARG_FLATTR_PROJECT_URL)!!,
-                    arguments!!.getString(ARG_FLATTR_URL)!!)
-
         if (arguments!!.getBoolean(ARG_BITCOIN_ENABLED))
             mBitcoinAddress = arguments!!.getString(ARG_BITCOIN_ADDRESS)
     }
@@ -110,14 +105,6 @@ class DonationsFragment : Fragment() {
     @TargetApi(11)
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
-        /* Flattr */
-        mFlattr?.let {
-            val flattrViewStub = view!!.findViewById<ViewStub>(R.id.donations__flattr_stub)
-            flattrViewStub.inflate()
-            buildFlattrView(it.first, it.second)
-        }
-
         /* Google */
         mGoogle?.let {
             val googleViewStub = view!!.findViewById<ViewStub>(R.id.donations__google_stub)
@@ -145,7 +132,7 @@ class DonationsFragment : Fragment() {
                     if (mDebug)
                     // and this exception is thrown, being almost "impossible"
                         Log.e(TAG, e.message ?: "Error!?")     // to the user to control it and forcing app close.
-                    openDialog(android.R.drawable.ic_dialog_alert,
+                    openDialog(R.drawable.alert,
                             R.string.donations__google_android_market_not_supported_title,
                             getString(R.string.donations__google_android_market_not_supported))
                 }
@@ -243,7 +230,7 @@ class DonationsFragment : Fragment() {
         if (viewIntent.resolveActivity(activity!!.packageManager) != null) {
             startActivity(chooser)
         } else {
-            openDialog(android.R.drawable.ic_dialog_alert, R.string.donations__alert_dialog_title,
+            openDialog(R.drawable.alert, R.string.donations__alert_dialog_title,
                     getString(R.string.donations__alert_dialog_no_browser))
         }
     }
@@ -261,131 +248,9 @@ class DonationsFragment : Fragment() {
         try {
             startActivity(i)
         } catch (e: ActivityNotFoundException) {
-            openDialog(android.R.drawable.ic_dialog_alert, R.string.donations__alert_dialog_title,
+            openDialog(R.drawable.alert, R.string.donations__alert_dialog_title,
                     getString(R.string.donations__alert_dialog_no_browser))        }
 
-    }
-
-    /**
-     * Build view for Flattr. see Flattr API for more information:
-     * http://developers.flattr.net/button/
-     */
-    @SuppressLint("SetJavaScriptEnabled", "ClickableViewAccessibility", "SetTextI18n")
-    @TargetApi(11)
-    private fun buildFlattrView(projectUrl: String, url: String) {
-        val mLoadingFrame = view!!.findViewById<FrameLayout>(R.id.donations__loading_frame)
-        val mFlattrWebview = view!!.findViewById<WebView>(R.id.donations__flattr_webview)
-
-        // disable hardware acceleration for this webview to get transparent background working
-        mFlattrWebview.setLayerType(View.LAYER_TYPE_SOFTWARE, null)
-
-        // define own webview client to override loading behaviour
-        mFlattrWebview.webViewClient = object : WebViewClient() {
-            /**
-             * Open all links in browser, not in webview
-             */
-            override fun shouldOverrideUrlLoading(view: WebView, urlNewString: String): Boolean {
-                try {
-                    view.context.startActivity(
-                            Intent(Intent.ACTION_VIEW, Uri.parse(urlNewString)))
-                } catch (e: ActivityNotFoundException) {
-                    openDialog(android.R.drawable.ic_dialog_alert, R.string.donations__alert_dialog_title,
-                            getString(R.string.donations__alert_dialog_no_browser))
-                }
-
-                return false
-            }
-
-            /**
-             * Support N properly
-             * https://stackoverflow.com/a/38484061/5509575
-             */
-            @TargetApi(Build.VERSION_CODES.N)
-            override fun shouldOverrideUrlLoading(view: WebView, urlNewRequest: WebResourceRequest): Boolean {
-                try {
-                    view.context.startActivity(
-                            Intent(Intent.ACTION_VIEW, urlNewRequest.url))
-                } catch (e: ActivityNotFoundException) {
-                    openDialog(android.R.drawable.ic_dialog_alert, R.string.donations__alert_dialog_title,
-                            getString(R.string.donations__alert_dialog_no_browser))
-                }
-
-                return false
-            }
-
-            /**
-             * Links in the flattr iframe should load in the browser not in the iframe itself,
-             * http:/
-             * /stackoverflow.com/questions/5641626/how-to-get-webview-iframe-link-to-launch-the
-             * -browser
-             */
-            override fun onLoadResource(view: WebView, url: String) {
-                if (url.contains("flattr")) {
-                    val result = view.hitTestResult
-                    if (result != null && result.type > 0) {
-                        try {
-                            view.context.startActivity(
-                                    Intent(Intent.ACTION_VIEW, Uri.parse(url)))
-                        } catch (e: ActivityNotFoundException) {
-                            openDialog(android.R.drawable.ic_dialog_alert, R.string.donations__alert_dialog_title,
-                                    getString(R.string.donations__alert_dialog_no_browser))
-                        }
-
-                        view.stopLoading()
-                    }
-                }
-            }
-
-            /**
-             * After loading is done, remove frame with progress circle
-             */
-            override fun onPageFinished(view: WebView, url: String) {
-                // remove loading frame, show webview
-                if (mLoadingFrame.visibility == View.VISIBLE) {
-                    mLoadingFrame.visibility = View.GONE
-                    mFlattrWebview.visibility = View.VISIBLE
-                }
-            }
-        }
-
-        // make text white and background transparent
-        val htmlStart = "<html> <head><style type='text/css'>*{color: #FFFFFF; background-color: transparent;}</style>"
-
-        // set url of flattr link
-        val mFlattrUrlTextView = view!!.findViewById<TextView>(R.id.donations__flattr_url)
-        mFlattrUrlTextView.text = "https://$url"
-
-        val flattrJavascript = ("<script type='text/javascript'>"
-                + "/* <![CDATA[ */"
-                + "(function() {"
-                + "var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];"
-                + "s.type = 'text/javascript';" + "s.async = true;" + "s.src = '"
-                + "https://api.flattr.com/js/0.6/load.js?mode=auto';" + "t.parentNode.insertBefore(s, t);"
-                + "})();" + "/* ]]> */" + "</script>")
-        val htmlMiddle = "</head> <body> <div align='center'>"
-        val flattrHtml = ("<a class='FlattrButton' style='display:none;' href='"
-                + projectUrl
-                + "' target='_blank'></a> <noscript><a href='https://"
-                + url
-                + "' target='_blank'> <img src='https://api.flattr.com/button/flattr-badge-large.png' alt='Flattr this' title='Flattr this' border='0' /></a></noscript>")
-        val htmlEnd = "</div> </body> </html>"
-
-        val flattrCode = htmlStart + flattrJavascript + htmlMiddle + flattrHtml + htmlEnd
-
-        mFlattrWebview.settings.javaScriptEnabled = true
-
-        mFlattrWebview.loadData(flattrCode, "text/html", "utf-8")
-
-        // disable scroll on touch
-        mFlattrWebview.setOnTouchListener { _, motionEvent ->
-            // already handled (returns true) when moving
-            motionEvent.action == MotionEvent.ACTION_MOVE
-        }
-
-        // make background of webview transparent
-        // has to be called AFTER loadData
-        // http://stackoverflow.com/questions/5003156/android-webview-style-background-colortransparent-ignored-on-android-2-2
-        mFlattrWebview.setBackgroundColor(0x00000000)
     }
 
     companion object {
@@ -401,10 +266,6 @@ class DonationsFragment : Fragment() {
         const val ARG_PAYPAL_USER = "paypalUser"
         const val ARG_PAYPAL_CURRENCY_CODE = "paypalCurrencyCode"
         const val ARG_PAYPAL_ITEM_NAME = "mPaypalItemName"
-
-        const val ARG_FLATTR_ENABLED = "flattrEnabled"
-        const val ARG_FLATTR_PROJECT_URL = "flattrProjectUrl"
-        const val ARG_FLATTR_URL = "flattrUrl"
 
         const val ARG_BITCOIN_ENABLED = "bitcoinEnabled"
         const val ARG_BITCOIN_ADDRESS = "bitcoinAddress"
@@ -427,17 +288,17 @@ class DonationsFragment : Fragment() {
          * @param paypalCurrencyCode  Currency code like EUR. See here for other codes:
          * https://developer.paypal.com/webapps/developer/docs/classic/api/currency_codes/#id09A6G0U0GYK
          * @param paypalItemName      Display item name on PayPal, like "Donation for NTPSync"
-         * @param flattrEnabled       Enable Flattr donations
-         * @param flattrProjectUrl    The project URL used on Flattr
-         * @param flattrUrl           The Flattr URL to your thing. NOTE: Enter without http://
          * @param bitcoinEnabled      Enable bitcoin donations
          * @param bitcoinAddress      The address to receive bitcoin
          * @return DonationsFragment
          */
-        fun newInstance(debug: Boolean, googleEnabled: Boolean, googlePubkey: String?, googleCatalog: Array<String>?,
-                        googleCatalogValues: Array<String>?, paypalEnabled: Boolean, paypalUser: String?,
-                        paypalCurrencyCode: String?, paypalItemName: String?, flattrEnabled: Boolean,
-                        flattrProjectUrl: String?, flattrUrl: String?, bitcoinEnabled: Boolean, bitcoinAddress: String?): DonationsFragment {
+        @Suppress("MemberVisibilityCanBePrivate") // entrypoint
+        fun newInstance(debug: Boolean, googleEnabled: Boolean, googlePubkey: String?,
+                        googleCatalog: Array<String>?, googleCatalogValues: Array<String>?,
+                        paypalEnabled: Boolean, paypalUser: String?, paypalCurrencyCode: String?,
+                        paypalItemName: String?, bitcoinEnabled: Boolean,
+                        bitcoinAddress: String?): DonationsFragment {
+
             val donationsFragment = DonationsFragment()
             val args = Bundle()
 
@@ -453,15 +314,48 @@ class DonationsFragment : Fragment() {
             args.putString(ARG_PAYPAL_CURRENCY_CODE, paypalCurrencyCode)
             args.putString(ARG_PAYPAL_ITEM_NAME, paypalItemName)
 
-            args.putBoolean(ARG_FLATTR_ENABLED, flattrEnabled)
-            args.putString(ARG_FLATTR_PROJECT_URL, flattrProjectUrl)
-            args.putString(ARG_FLATTR_URL, flattrUrl)
-
             args.putBoolean(ARG_BITCOIN_ENABLED, bitcoinEnabled)
             args.putString(ARG_BITCOIN_ADDRESS, bitcoinAddress)
 
             donationsFragment.arguments = args
             return donationsFragment
+        }
+
+        /**
+         * Instantiate DonationsFragment.
+         *
+         * @param debug               You can use BuildConfig.DEBUG to propagate the debug flag from your app to the Donations library
+         * @param googleEnabled       Enabled Google Play donations
+         * @param googlePubkey        Your Google Play public key
+         * @param googleCatalog       Possible item names that can be purchased from Google Play
+         * @param googleCatalogValues Values for the names
+         * @param paypalEnabled       Enable PayPal donations
+         * @param paypalUser          Your PayPal email address
+         * @param paypalCurrencyCode  Currency code like EUR. See here for other codes:
+         * https://developer.paypal.com/webapps/developer/docs/classic/api/currency_codes/#id09A6G0U0GYK
+         * @param paypalItemName      Display item name on PayPal, like "Donation for NTPSync"
+         * @param flattrEnabled       Obselete, as no effect
+         * @param flattrProjectUrl    Obselete, has no effect
+         * @param flattrUrl           Obselete, has no effect
+         * @param bitcoinEnabled      Enable bitcoin donations
+         * @param bitcoinAddress      The address to receive bitcoin
+         * @return DonationsFragment
+         */
+
+        @Deprecated("flattr no longer supported", ReplaceWith("newInstance(debug, googleEnabled," +
+                "googlePubkey, googleCatalog, googleCatalogValues, paypalEnabled, paypalUser, " +
+                "paypalCurrencyCode, paypalItemName, bitcoinEnabled, bitcoinAddress)"))
+
+        fun newInstance(debug: Boolean, googleEnabled: Boolean, googlePubkey: String?,
+                        googleCatalog: Array<String>?, googleCatalogValues: Array<String>?,
+                        paypalEnabled: Boolean, paypalUser: String?, paypalCurrencyCode: String?,
+                        paypalItemName: String?, flattrEnabled: Boolean, flattrProjectUrl: String?,
+                        flattrUrl: String?, bitcoinEnabled: Boolean,
+                        bitcoinAddress: String?): DonationsFragment {
+
+            return newInstance(debug, googleEnabled, googlePubkey, googleCatalog,
+                    googleCatalogValues, paypalEnabled, paypalUser, paypalCurrencyCode,
+                    paypalItemName, bitcoinEnabled, bitcoinAddress)
         }
     }
 }

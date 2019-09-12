@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="donations__button_close">"Zamknij"</string>
-    <string name="donations__flattr">"Flattr"</string>
     <string name="donations__description">"Czy uważasz tę aplikację za przydatną?
 Wesprzyj jej twórcę wysyłając mu dotację!"</string>
-    <string name="donations__flattr_description">"Flattr nalicza opłatę w wysokości 10%%"</string>
     <string name="donations__google_android_market">"Sklep Google Play"</string>
     <string name="donations__google_android_market_not_supported_title">"Wsparcie poprzez płatność z aplikacji nie jest dostępne."</string>
     <string name="donations__google_android_market_not_supported">"Brak wsparcia dla wbudowanych płatności. Czy aplikacja Sklep Google Play jest zainstalowana prawidłowo?"</string>
-    <string name="donations__google_android_market_description">"Google nalicza opłatę w wysokości 30%%"</string>
+    <string name="donations__google_android_market_description">"Google nalicza opłatę w wysokości 30%"</string>
     <string name="donations__google_android_market_donate_button">"Przekaż!"</string>
     <string name="donations__google_android_market_text">"Kwota do przekazania?"</string>
     <string name="donations__paypal">"PayPal"</string>

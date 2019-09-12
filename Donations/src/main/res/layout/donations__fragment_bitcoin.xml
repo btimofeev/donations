@@ -1,37 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:orientation="horizontal">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/donations__bitcoin_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/donations__bitcoin"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/donations__bitcoin_description"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1.0"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="5dp"
-            android:text="@string/donations__bitcoin"
-            android:textAppearance="?android:attr/textAppearanceMedium"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="5dp"
-            android:paddingTop="5dp"
-            android:text="@string/donations__bitcoin_description"
-            android:textAppearance="@android:style/TextAppearance.Small"/>
-    </LinearLayout>
+        android:text="@string/donations__bitcoin_description"
+        android:textAppearance="@android:style/TextAppearance.Small"
+        app:layout_constraintEnd_toStartOf="@id/donations__bitcoin_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/donations__bitcoin_title" />
 
     <Button
         android:id="@+id/donations__bitcoin_button"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginLeft="8dp"
-        android:text="@string/donations__bitcoin_send_bitcoin_button"/>
+        android:layout_height="0dp"
+        android:text="@string/donations__bitcoin_send_bitcoin_button"
+        app:layout_constraintStart_toEndOf="@id/donations__bitcoin_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/donations__bitcoin_description"/>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

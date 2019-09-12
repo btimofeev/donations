@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="org.sufficientlysecure.donations.example">
 
     <application
         android:icon="@drawable/ic_launcher"
-        android:allowBackup="true"
-        android:label="Donations Example">
+        android:allowBackup="false"
+        android:label="Donations Example"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".DonationsActivity"
             android:label="Donations">

@@ -19,13 +19,6 @@
             android:textAppearance="@android:style/TextAppearance.Small" />
 
         <ViewStub
-            android:id="@+id/donations__flattr_stub"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inflatedId="@+id/donations__flattr"
-            android:layout="@layout/donations__fragment_flattr" />
-
-        <ViewStub
             android:id="@+id/donations__google_stub"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

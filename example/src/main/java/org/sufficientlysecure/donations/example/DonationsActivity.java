@@ -18,10 +18,10 @@ package org.sufficientlysecure.donations.example;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import org.sufficientlysecure.donations.DonationsFragment;
 
@@ -42,13 +42,6 @@ public class DonationsActivity extends FragmentActivity {
     private static final String PAYPAL_CURRENCY_CODE = "EUR";
 
     /**
-     * Flattr
-     */
-    private static final String FLATTR_PROJECT_URL = "https://github.com/dschuermann/android-donations-lib/";
-    // FLATTR_URL without http:// !
-    private static final String FLATTR_URL = "flattr.com/thing/712895/dschuermannandroid-donations-lib-on-GitHub";
-
-    /**
      * Bitcoin
      */
     private static final String BITCOIN_ADDRESS = "12Y6zbBYoRxf8kBrjau3WedjtzvcACvPMk";
@@ -67,10 +60,10 @@ public class DonationsActivity extends FragmentActivity {
         if (BuildConfig.DONATIONS_GOOGLE) {
             donationsFragment = DonationsFragment.Companion.newInstance(BuildConfig.DEBUG, true, GOOGLE_PUBKEY, GOOGLE_CATALOG,
                     getResources().getStringArray(R.array.donation_google_catalog_values), false, null, null,
-                    null, false, null, null, false, null);
+                    null, false, null);
         } else {
             donationsFragment = DonationsFragment.Companion.newInstance(BuildConfig.DEBUG, false, null, null, null, true, PAYPAL_USER,
-                    PAYPAL_CURRENCY_CODE, getString(R.string.donation_paypal_item), true, FLATTR_PROJECT_URL, FLATTR_URL, true, BITCOIN_ADDRESS);
+                    PAYPAL_CURRENCY_CODE, getString(R.string.donation_paypal_item), true, BITCOIN_ADDRESS);
         }
 
         ft.replace(R.id.donations_activity_container, donationsFragment, "donationsFragment");

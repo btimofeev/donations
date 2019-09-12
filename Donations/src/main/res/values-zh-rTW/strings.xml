@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="donations__button_close">"關閉"</string>
-    <string name="donations__flattr">"Flattr"</string>
     <string name="donations__description">"你覺得這個應用程序有用嗎？
 通過向開發人員發送捐款來支持其發展！"</string>
-    <string name="donations__flattr_description">"Flattr收取10%％的費用"</string>
     <string name="donations__google_android_market">"Google Play 商店"</string>
     <string name="donations__google_android_market_not_supported_title">"不支援程式內贊助。"</string>
     <string name="donations__google_android_market_not_supported">"不支援程式內贊助， Google Play 商店是否安裝正確？"</string>
-    <string name="donations__google_android_market_description">"谷歌收取30%％的費用"</string>
+    <string name="donations__google_android_market_description">"谷歌收取30%的費用"</string>
     <string name="donations__google_android_market_donate_button">"贊助！"</string>
     <string name="donations__google_android_market_text">"多少？"</string>
     <string name="donations__paypal">"PayPal"</string>

@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="donations__button_close">"Lukk"</string>
-    <string name="donations__flattr">"Flattr"</string>
     <string name="donations__description">"Finner du nytte i dette programmet?\
 Støtt dets utvikling ved å sende en donasjon til utvikleren!"</string>
-    <string name="donations__flattr_description">"Flattr tar en avgift på 10%%"</string>
     <string name="donations__google_android_market">"Google Play-butikk"</string>
     <string name="donations__google_android_market_not_supported_title">"Donasjoner innebygd i programmer støttes ikke."</string>
     <string name="donations__google_android_market_not_supported">"Donasjoner innebygd i programmer støttes ikke. Er Google Play-butikken installert rett?"</string>
-    <string name="donations__google_android_market_description">"Google tar en avgift på 30%%"</string>
+    <string name="donations__google_android_market_description">"Google tar en avgift på 30%"</string>
     <string name="donations__google_android_market_donate_button">"Doner!"</string>
     <string name="donations__google_android_market_text">"Hvor mye?"</string>
     <string name="donations__paypal">"PayPal"</string>
