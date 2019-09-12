@@ -6,7 +6,7 @@ Android Donations Lib supports donations by Google Play Store, Flattr, PayPal, a
 
 ## How to use
 
-1. Add dependency to your build.gradle: https://jitpack.io/#penn5/donations/v2.7
+1. Add dependency to your build.gradle: https://jitpack.io/#penn5/donations
 2. Instantiate the fragment where you want to use it. Check out the example app for this: [DonationsActivity.java](https://github.com/penn5/donations/blob/master/example/src/main/java/org/penn5/donations/example/DonationsActivity.java)
 3. When publishing the app you must create managed in-app products for your app in the Google Play Store that matches the ones you defined in ``private static final String[] GOOGLE_CATALOG``
 
