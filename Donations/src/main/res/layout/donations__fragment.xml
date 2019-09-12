@@ -39,6 +39,13 @@
             android:inflatedId="@+id/donations__bitcoin"
             android:layout="@layout/donations__fragment_bitcoin" />
 
+        <TextView
+            android:id="@+id/donations__not_available"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/donate_unavailable"
+            android:visibility="gone" />
+
     </LinearLayout>
 
 </ScrollView>

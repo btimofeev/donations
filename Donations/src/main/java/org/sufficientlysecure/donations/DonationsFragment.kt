@@ -28,10 +28,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewStub
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.Spinner
-import android.widget.Toast
+import android.widget.*
 import androidx.fragment.app.Fragment
 import org.sufficientlysecure.donations.util.GoogleIABHelper
 import org.sufficientlysecure.donations.util.GoogleIABListener
@@ -105,8 +102,11 @@ class DonationsFragment : Fragment() {
     @TargetApi(11)
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        var worked = false
+
         /* Google */
         mGoogle?.let {
+            worked = true
             val googleViewStub = view!!.findViewById<ViewStub>(R.id.donations__google_stub)
             googleViewStub.inflate()
 
@@ -141,6 +141,7 @@ class DonationsFragment : Fragment() {
 
         /* PayPal */
         mPaypal?.let {
+            worked = true
             val paypalViewStub = view!!.findViewById<ViewStub>(R.id.donations__paypal_stub)
             paypalViewStub.inflate()
 
@@ -150,6 +151,7 @@ class DonationsFragment : Fragment() {
 
         /* Bitcoin */
         mBitcoinAddress?.let {
+            worked = true
             // inflate bitcoin view into stub
             val bitcoinViewStub = view!!.findViewById<View>(R.id.donations__bitcoin_stub) as ViewStub
             bitcoinViewStub.inflate()
@@ -163,6 +165,10 @@ class DonationsFragment : Fragment() {
                 Toast.makeText(activity, R.string.donations__bitcoin_toast_copy, Toast.LENGTH_SHORT).show()
                 true
             }
+        }
+
+        if (!worked) {
+            view!!.findViewById<TextView>(R.id.donations__not_available).visibility = View.VISIBLE
         }
     }
 
