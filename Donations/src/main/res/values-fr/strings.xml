@@ -4,11 +4,11 @@
     <string name="donations__flattr">"Flattr"</string>
     <string name="donations__description">"Trouvez-vous que cette application est utile ?\
 Soutenez son développement en envoyant un don à son développeur !"</string>
-    <string name="donations__flattr_description">"Flattr facture des frais de 10 %"</string>
+    <string name="donations__flattr_description">"Flattr facture des frais de 10 %%"</string>
     <string name="donations__google_android_market">"Google Play Store"</string>
     <string name="donations__google_android_market_not_supported_title">"Les dons intégrés à l'appli ne sont pas pris en charge."</string>
     <string name="donations__google_android_market_not_supported">"Les dons intégrés à l'appli ne sont pas pris en charge. Google Play Store est-il correctement installé ?"</string>
-    <string name="donations__google_android_market_description">"Google facture des frais de 30 %"</string>
+    <string name="donations__google_android_market_description">"Google facture des frais de 30 %%"</string>
     <string name="donations__google_android_market_donate_button">"Faites un don !"</string>
     <string name="donations__google_android_market_text">"Combien ?"</string>
     <string name="donations__paypal">"PayPal"</string>

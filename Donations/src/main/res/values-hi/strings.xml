@@ -3,22 +3,21 @@
     <string name="donations__button_close">"बंद करे"</string>
     <string name="donations__flattr">"Flattr"</string>
     <string name="donations__description">"Application सहयातमंद रही? दान द्वारा Development में योगदान दे ! "</string>
-    <string name="donations__flattr_description">"Flattr 10% चार्ज करता है"</string>
+    <string name="donations__flattr_description">"Flattr 10%% चार्ज करता है"</string>
     <string name="donations__google_android_market">"Google Play Store"</string>
     <string name="donations__google_android_market_not_supported_title">"In-App Donations काम नहीं कर रहे है"</string>
     <string name="donations__google_android_market_not_supported">"In-App Donations काम नहीं कर रहे है। Google play सही से  install किया है?"</string>
-    <string name="donations__google_android_market_description">"Google 30% "</string>
-    <string name="donations__google_android_market_donate_button">"दान करना!"</string>
-    <string name="donations__google_android_market_text">"कितना?"</string>
-    <string name="donations__paypal">"पेपैल"</string>
-    <string name="donations__paypal_description">"आप यह चुन सकते हैं कि बटन क्लिक करने के बाद आप कितना दान करना चाहते हैं!"</string>
-    <string name="donations__thanks_dialog_title">"धन्यवाद!"</string>
-    <string name="donations__thanks_dialog">"दान करने के लिए धन्यवाद!
-मैं सचमुच इसकी सराहना करता हूं!"</string>
-    <string name="donations__alert_dialog_title">"त्रुटि हुई"</string>
-    <string name="donations__alert_dialog_no_browser">"वेबसाइट खोलने के लिए कोई ब्राउज़र नहीं मिला!"</string>
+    <string name="donations__google_android_market_description">"Google 30%% चार्ज लेता है"</string>
+    <string name="donations__google_android_market_donate_button">"दान दे!"</string>
+    <string name="donations__google_android_market_text">"कितना देंगे?"</string>
+    <string name="donations__paypal">"PayPal"</string>
+    <string name="donations__paypal_description">"बटन दबाने के बाद अपनी इच्छानुसार दान दे"</string>
+    <string name="donations__thanks_dialog_title">"धन्यवाद"</string>
+    <string name="donations__thanks_dialog">"धन्यवाद दान का। आपका योगदान इस प्रोजेक्ट में बहुत महत्वपुर्ण है "</string>
+    <string name="donations__alert_dialog_title">"Error हुआं"</string>
+    <string name="donations__alert_dialog_no_browser">"कोई  browser नहीं मिला website खोलने के लिए"</string>
     <string name="donations__bitcoin">"Bitcoin"</string>
-    <string name="donations__bitcoin_description">"डेवलपर को बिटकॉइन की कोई भी राशि भेजें। पता कॉपी करने के लिए बटन दबाकर रखें।"</string>
-    <string name="donations__bitcoin_send_bitcoin_button">"बिटकॉइन भेजें!"</string>
-    <string name="donations__bitcoin_toast_copy">"बिटकॉइन एड्रेस को क्लिपबोर्ड पर कॉपी किया गया है!"</string>
+    <string name="donations__bitcoin_description">"अपनी इच्छानुसार Bitcoin दे। address copy करने के लिए बटन दबाये रखे "</string>
+    <string name="donations__bitcoin_send_bitcoin_button">"Bitcoin दान दे!"</string>
+    <string name="donations__bitcoin_toast_copy">"Bitcoin address copied"</string>
 </resources>
