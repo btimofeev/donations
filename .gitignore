@@ -28,3 +28,6 @@ pom.xml.*
 #IntelliJ IDEA
 .idea
 *.iml
+
+# Secrets
+Donations/poeditor.properties
