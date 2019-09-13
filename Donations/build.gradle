@@ -1,3 +1,7 @@
+plugins {
+    id 'com.gladed.androidgitversion' version '0.4.9'
+}
+
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
@@ -17,8 +21,8 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 29
-        versionCode 9
-        versionName '2.7'
+        versionCode androidGitVersion.code()
+        versionName androidGitVersion.name()
         consumerProguardFiles 'proguard-rules.pro'
     }
 }
