@@ -19,4 +19,5 @@ Ondersteun de ontwikkeling door middel van een donatie aan de ontwikkelaar!"</st
     <string name="donations__bitcoin_description">"Stuur eender welk bedrag naar de ontwikkelaar in bitcoins. Houd de knop ingedrukt om het adres te kopiëren."</string>
     <string name="donations__bitcoin_send_bitcoin_button">"Verstuur bitcoins!"</string>
     <string name="donations__bitcoin_toast_copy">"Bitcoin-adres is gekopieerd naar het klembord!"</string>
+    <string name="donate_unavailable">"Helaas, je kan op dit moment niet automatisch doneren. Zoek contact met de ontwikkelaar om te vragen hoe je kan doneren"</string>
 </resources>

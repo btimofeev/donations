@@ -20,4 +20,5 @@ Agradeço-lhe imenso!"</string>
     <string name="donations__bitcoin_description">"Envie qualquer quantidade de bitcoin ao desenvolvedor. Pressione e segure o botão para copiar o endereço."</string>
     <string name="donations__bitcoin_send_bitcoin_button">"Envie bitcoin!"</string>
     <string name="donations__bitcoin_toast_copy">"O endereço Bitcoin foi copiado para a área de transferência!"</string>
+    <string name="donate_unavailable">"Infelizmente, não consigue doar automaticamente neste momento. Por favor contate o desenvolvedor e pergunte como doar."</string>
 </resources>

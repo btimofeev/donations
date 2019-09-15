@@ -20,4 +20,5 @@ Ich weiß es wirklich zu schätzen!"</string>
     <string name="donations__bitcoin_description">"Sende eine beliebige Anzahl von Bitcoins an den Entwickler. Halte den Button gedrückt, um die Adresse zu kopieren."</string>
     <string name="donations__bitcoin_send_bitcoin_button">"Sende Bitcoins!"</string>
     <string name="donations__bitcoin_toast_copy">"Bitcoin-Adresse wurde in die Zwischenablage kopiert!"</string>
+    <string name="donate_unavailable">"Leider kannst du gerade nicht automatisch spenden. Bitte kontaktiere den Entwickler und Frage ihn, wie man spendet."</string>
 </resources>

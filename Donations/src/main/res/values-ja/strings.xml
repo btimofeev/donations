@@ -20,4 +20,5 @@
     <string name="donations__bitcoin_description">"開発者にビットコインを送ります。 ボタンを長押ししてアドレスをコピーします。"</string>
     <string name="donations__bitcoin_send_bitcoin_button">"Bitcoin を送信!"</string>
     <string name="donations__bitcoin_toast_copy">"Bitcoin のアドレスをクリップボードにコピーしました!"</string>
+    <string name="donate_unavailable">"申し訳御座いません、今は寄付することができません。開発者に連絡して、どうやって寄付すればいいのかお聞きください。"</string>
 </resources>

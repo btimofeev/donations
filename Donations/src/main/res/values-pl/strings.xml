@@ -20,4 +20,5 @@ Naprawdę to doceniam!"</string>
     <string name="donations__bitcoin_description">"Wyślij dowolną ilość bitcoinów developerowi. Naciśnij i przytrzymaj przycisk aby skopiować adres."</string>
     <string name="donations__bitcoin_send_bitcoin_button">"Wyślij bitcoiny!"</string>
     <string name="donations__bitcoin_toast_copy">"Adres Bitcoin został skopiowany do schowka!"</string>
+    <string name="donate_unavailable">"Niestety, nie możesz teraz przekazać dotacji. Skontaktuj się z developerem aby spytać o inne możliwości przesłania dotacji."</string>
 </resources>
