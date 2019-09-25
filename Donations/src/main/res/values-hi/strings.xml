@@ -18,4 +18,5 @@
     <string name="donations__bitcoin_description">"अपनी इच्छानुसार Bitcoin दे। address copy करने के लिए बटन दबाये रखे "</string>
     <string name="donations__bitcoin_send_bitcoin_button">"Bitcoin दान दे!"</string>
     <string name="donations__bitcoin_toast_copy">"Bitcoin address copied"</string>
+    <string name="donate_unavailable">"आप अभी दान नहीं दे पा रहे। Developer को संपर्क करे कोई दान के समस्या के लिए "</string>
 </resources>
