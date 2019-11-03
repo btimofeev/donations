@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="donations__button_close">"Закрити"</string>
-    <string name="donations__description">"Цей додаток став корисним для Вас?
-Підтримайте його розробку надіславши подяку розробнику!"</string>
-    <string name="donations__google_android_market">"магазин Google Play"</string>
-    <string name="donations__google_android_market_not_supported_title">"Програмні пожертви не підтримуються."</string>
-    <string name="donations__google_android_market_not_supported">"Пожертвування через програму не підтримуються. Магазин Google Play встановлений правильно?"</string>
-    <string name="donations__google_android_market_description">"Google знімає 30% комісії"</string>
-    <string name="donations__google_android_market_donate_button">"Пожертвувати!"</string>
-    <string name="donations__google_android_market_text">"Скільки?"</string>
+    <string name="donations__description">"Чи був цей додаток для вас корисним?
+Якщо так, підтримайте його подальшу розробку!"</string>
+    <string name="donations__google_android_market">"Google Play Store"</string>
+    <string name="donations__google_android_market_not_supported_title">"Внутрішні платежі не підтримуються."</string>
+    <string name="donations__google_android_market_not_supported">"Немає підтримки внутрішніх платежів. Чи ви впевнені, що Google Play встановлено коректно?"</string>
+    <string name="donations__google_android_market_description">"Google збирає 30-відсоткову комісію."</string>
+    <string name="donations__google_android_market_donate_button">"Внести пожертву!"</string>
+    <string name="donations__google_android_market_text">"Як багато?"</string>
     <string name="donations__paypal">"PayPal"</string>
-    <string name="donations__paypal_description">"Після натискання на кнопку ви можете вибрати скільки хочете пожертвувати!"</string>
+    <string name="donations__paypal_description">"У наступному кроці ви зможете обрати суму пожертви!"</string>
     <string name="donations__thanks_dialog_title">"Дякую!"</string>
-    <string name="donations__thanks_dialog">"Дякую за пожертвування!
-Я дуже це ціную!"</string>
-    <string name="donations__alert_dialog_title">"Трапилася помилка"</string>
+    <string name="donations__thanks_dialog">"Я щиро ціную вашу пожертву!"</string>
+    <string name="donations__alert_dialog_title">"Трапилася помилка."</string>
     <string name="donations__alert_dialog_no_browser">"Не знайдено жодного переглядача, щоб відкрити веб-сайт!"</string>
     <string name="donations__bitcoin">"Bitcoin"</string>
-    <string name="donations__bitcoin_description">"Відправте будь-яку кількість bitcoin розробнику. Натисніть та утримуйте кнопку, аби скопіювати адресу."</string>
+    <string name="donations__bitcoin_description">"Виділіть скільки зможете, затисніть кнопку, аби скопіювати адресу."</string>
     <string name="donations__bitcoin_send_bitcoin_button">"Надіслати bitcoin!"</string>
-    <string name="donations__bitcoin_toast_copy">"Bitcoin адресу скопійовано до буферу обміну!"</string>
+    <string name="donations__bitcoin_toast_copy">"Адресу скопійовано!"</string>
+    <string name="donate_unavailable">"На жаль, внести пожертву не вдалося. Будь ласка, повідомте розробникові!"</string>
 </resources>

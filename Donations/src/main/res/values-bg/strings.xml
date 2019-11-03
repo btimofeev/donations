@@ -20,4 +20,5 @@
     <string name="donations__bitcoin_description">"Изпратете каквото и да е количество биткойни на разработчика. Натиснете и задръжте бутона, за да копирате адреса."</string>
     <string name="donations__bitcoin_send_bitcoin_button">"Изпратете биткойни!"</string>
     <string name="donations__bitcoin_toast_copy">"Биткойн адресът е копиран в клипборда!"</string>
+    <string name="donate_unavailable">"За съжаление, не можете да дарите автоматично точно сега. Моля свържете се със разработчика за да попитате как да дарите."</string>
 </resources>

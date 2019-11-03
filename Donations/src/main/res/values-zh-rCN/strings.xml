@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="donations__button_close">"关闭"</string>
-    <string name="donations__description">"你觉得这个应用程序有用吗？
-通过向开发人发送捐款来支持其发展！"</string>
-    <string name="donations__google_android_market">"Google Play 商店"</string>
-    <string name="donations__google_android_market_not_supported_title">"不支持 In-App 捐赠。"</string>
-    <string name="donations__google_android_market_not_supported">"不支持 In-App 捐赠。你的 Google Play 商店是否安装正确？"</string>
-    <string name="donations__google_android_market_description">"Google 收取30％的费用"</string>
+    <string name="donations__description">"如果您觉得此应用十分有用，请考虑向作者捐赠！"</string>
+    <string name="donations__google_android_market">"通过 Google Play 商店捐赠"</string>
+    <string name="donations__google_android_market_not_supported_title">"您的设备不支持应用内捐赠。"</string>
+    <string name="donations__google_android_market_not_supported">"您的设备不支持应用内捐赠。请您检查 Google Play 商店是否正确安装。"</string>
+    <string name="donations__google_android_market_description">"Google 会收取 30％ 的费用"</string>
     <string name="donations__google_android_market_donate_button">"捐赠！"</string>
     <string name="donations__google_android_market_text">"捐赠多少？"</string>
     <string name="donations__paypal">"PayPal"</string>
@@ -17,7 +16,7 @@
     <string name="donations__alert_dialog_title">"发生错误"</string>
     <string name="donations__alert_dialog_no_browser">"未找到浏览器来打开网页"</string>
     <string name="donations__bitcoin">"比特币"</string>
-    <string name="donations__bitcoin_description">"将任意数量的比特币发送给开发人。按住按钮复制地址。"</string>
+    <string name="donations__bitcoin_description">"您可以捐赠任何数的比特币。 点击复制可复制比特币地址。"</string>
     <string name="donations__bitcoin_send_bitcoin_button">"发送比特币！"</string>
     <string name="donations__bitcoin_toast_copy">"比特币地址已被复制到剪贴板！"</string>
     <string name="donate_unavailable">"抱歉，您现正不能自动损款。请联络开发人查询如何捐款"</string>

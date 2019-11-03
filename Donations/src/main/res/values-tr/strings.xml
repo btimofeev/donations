@@ -2,22 +2,23 @@
 <resources>
     <string name="donations__button_close">"Kapat"</string>
     <string name="donations__description">"Bu uygulamayı yararlı buluyor musunuz?
-Geliştireni desteklemek için bağış yapın!"</string>
-    <string name="donations__google_android_market">"Google Play Mağazası"</string>
-    <string name="donations__google_android_market_not_supported_title">"Uygulama içi bağışlar desteklenmez."</string>
-    <string name="donations__google_android_market_not_supported">"Uygulama içi bağışlar desteklenmez. Google Play Mağazası doğru şekilde kuruldu mu?"</string>
-    <string name="donations__google_android_market_description">"Google ücretin %30'unu talep ediyor."</string>
-    <string name="donations__google_android_market_donate_button">"Bağış Yap!"</string>
+Geliştiriciyi desteklemek için bağış yapın!"</string>
+    <string name="donations__google_android_market">"Google Play Store"</string>
+    <string name="donations__google_android_market_not_supported_title">"Uygulama içi bağış desteklenmiyor."</string>
+    <string name="donations__google_android_market_not_supported">"Uygulama içi bağış desteklenmiyor. Google Play Store doğru şekilde kurulu mu?"</string>
+    <string name="donations__google_android_market_description">"Google %30 komisyon alır."</string>
+    <string name="donations__google_android_market_donate_button">"Bağış yap!"</string>
     <string name="donations__google_android_market_text">"Ne kadar?"</string>
     <string name="donations__paypal">"PayPal"</string>
-    <string name="donations__paypal_description">"Butona bastıktan sonra ne kadar bağış yapacağınızı seçebilirsiniz!"</string>
+    <string name="donations__paypal_description">"Tuşa bastıktan sonra ne kadar bağış yapacağınızı seçebilirsiniz!"</string>
     <string name="donations__thanks_dialog_title">"Teşekkürler!"</string>
     <string name="donations__thanks_dialog">"Bağışınız için teşekkürler!
 Bu beni çok mutlu etti!"</string>
     <string name="donations__alert_dialog_title">"Hata oluştu"</string>
     <string name="donations__alert_dialog_no_browser">"Web site açmak için tarayıcı bulunamadı!"</string>
     <string name="donations__bitcoin">"Bitcoin"</string>
-    <string name="donations__bitcoin_description">"Geliştirene herhangi bir miktar Bitcoin gönderin. Adresin kopyalanması için tuşa basılı tutun."</string>
-    <string name="donations__bitcoin_send_bitcoin_button">"Bitcoin Gönderin!"</string>
+    <string name="donations__bitcoin_description">"Geliştiriciye istediğiniz miktarda Bitcoin gönderin. Adresin kopyalamak için tuşa basılı tutun."</string>
+    <string name="donations__bitcoin_send_bitcoin_button">"Bitcoin gönderin!"</string>
     <string name="donations__bitcoin_toast_copy">"Bitcoin adresi panoya kopyalandı!"</string>
+    <string name="donate_unavailable">"Maalesef, şu an otomatik olarak bağış yapamazsınız. Bağış yapmak için lütfen geliştiriciye ulaşın."</string>
 </resources>

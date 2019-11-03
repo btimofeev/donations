@@ -20,4 +20,7 @@ Je vous en suis très reconnaissant !"</string>
     <string name="donations__bitcoin_description">"Envoyez n'importe quel montant en bitcoins au développeur. Appuyez longuement sur le bouton pour copier l'adresse."</string>
     <string name="donations__bitcoin_send_bitcoin_button">"Envoyez des bitcoins !"</string>
     <string name="donations__bitcoin_toast_copy">"L'adresse Bitcoin a été copiée dans le presse-papiers !"</string>
+
+    <!-- Fuzzy -->
+    <string name="donate_unavailable">"Malheureusement, vous ne pouvez pas faire un don maintenant. S'il vous plaît contacter le développeur pour demander comment faire un don."</string>
 </resources>

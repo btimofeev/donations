@@ -19,4 +19,5 @@
     <string name="donations__bitcoin_description">"Отправьте любое количество bitcoin разработчику. Нажмите и удерживайте кнопку, чтобы скопировать адрес."</string>
     <string name="donations__bitcoin_send_bitcoin_button">"Отправить bitcoin!"</string>
     <string name="donations__bitcoin_toast_copy">"Bitcoin-адрес был скопирован в буфер обмена!"</string>
+    <string name="donate_unavailable">"К сожалению, вы не можете пожертвовать автоматически прямо сейчас. Пожалуйста, обратитесь к разработчику."</string>
 </resources>

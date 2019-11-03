@@ -20,4 +20,5 @@ Tôi vô cùng cảm kích!"</string>
     <string name="donations__bitcoin_description">"Gửi bất kỳ số lượng bitcoin cho nhà phát triển. Nhấn và giữ nút để sao chép địa chỉ."</string>
     <string name="donations__bitcoin_send_bitcoin_button">"Gửi bitcoin!"</string>
     <string name="donations__bitcoin_toast_copy">"Địa chỉ bitcoin đã được sao chép vào clipboard!"</string>
+    <string name="donate_unavailable">"Đáng tiếc, bạn không thể đặt khuyên góp tự động trong lúc này. Hãy liên lạc với nhà phát triển để được hướng dẫn cách khuyên góp."</string>
 </resources>
