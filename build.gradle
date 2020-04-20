@@ -8,7 +8,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:3.6.3'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "com.github.penn5:poeditor-android:0.0.3"
+        classpath "com.github.penn5:poeditor-android:0.0.5"
     }
 }
 
