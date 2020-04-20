@@ -45,7 +45,6 @@ class GoogleIABHelper(private val context: Activity, private val listener: Googl
                     continue
                 ensureConnected {
                     billingClient.consumeAsync(ConsumeParams.newBuilder()
-                            .setDeveloperPayload(purchase.developerPayload)
                             .setPurchaseToken(purchase.purchaseToken)
                             .build()) { consumeBillingResult: BillingResult, purchaseToken: String ->
                         Log.d(tag, "Consumed")

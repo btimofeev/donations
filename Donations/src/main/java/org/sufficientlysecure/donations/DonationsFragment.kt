@@ -76,23 +76,21 @@ class DonationsFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        assert(arguments != null)
-
-        mDebug = arguments!!.getBoolean(ARG_DEBUG)
-        if (arguments!!.getBoolean(ARG_GOOGLE_ENABLED)) {
-            val catalogValues = arguments!!.getStringArray(ARG_GOOGLE_CATALOG_VALUES)!!
-            mGoogle = Pair(arguments!!.getString(ARG_GOOGLE_PUBKEY)!!,
-                    arguments!!.getStringArray(ARG_GOOGLE_CATALOG)!!.withIndex()
+        mDebug = requireArguments().getBoolean(ARG_DEBUG)
+        if (requireArguments().getBoolean(ARG_GOOGLE_ENABLED)) {
+            val catalogValues = requireArguments().getStringArray(ARG_GOOGLE_CATALOG_VALUES)!!
+            mGoogle = Pair(requireArguments().getString(ARG_GOOGLE_PUBKEY)!!,
+                    requireArguments().getStringArray(ARG_GOOGLE_CATALOG)!!.withIndex()
                             .associateBy ({it.value}, {catalogValues[it.index]}))
         }
 
-        if (arguments!!.getBoolean(ARG_PAYPAL_ENABLED))
-            mPaypal = Triple(arguments!!.getString(ARG_PAYPAL_USER)!!,
-                    arguments!!.getString(ARG_PAYPAL_CURRENCY_CODE)!!,
-                    arguments!!.getString(ARG_PAYPAL_ITEM_NAME)!!)
+        if (requireArguments().getBoolean(ARG_PAYPAL_ENABLED))
+            mPaypal = Triple(requireArguments().getString(ARG_PAYPAL_USER)!!,
+                    requireArguments().getString(ARG_PAYPAL_CURRENCY_CODE)!!,
+                    requireArguments().getString(ARG_PAYPAL_ITEM_NAME)!!)
 
-        if (arguments!!.getBoolean(ARG_BITCOIN_ENABLED))
-            mBitcoinAddress = arguments!!.getString(ARG_BITCOIN_ADDRESS)
+        if (requireArguments().getBoolean(ARG_BITCOIN_ENABLED))
+            mBitcoinAddress = requireArguments().getString(ARG_BITCOIN_ADDRESS)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -107,23 +105,23 @@ class DonationsFragment : Fragment() {
         /* Google */
         mGoogle?.let {
             worked = true
-            val googleViewStub = view!!.findViewById<ViewStub>(R.id.donations__google_stub)
+            val googleViewStub = requireView().findViewById<ViewStub>(R.id.donations__google_stub)
             googleViewStub.inflate()
 
             // choose donation amount
-            mGoogleSpinner = view!!.findViewById(
+            mGoogleSpinner = requireView().findViewById(
                     R.id.donations__google_android_market_spinner)
             val adapter = if (mDebug) {
-                ArrayAdapter(activity!!,
+                ArrayAdapter(requireActivity(),
                         android.R.layout.simple_spinner_item, CATALOG_DEBUG)
             } else {
-                ArrayAdapter(activity!!,
+                ArrayAdapter(requireActivity(),
                         android.R.layout.simple_spinner_item, it.second.values.toTypedArray())
             }
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             mGoogleSpinner!!.adapter = adapter
 
-            val btGoogle = view!!.findViewById<Button>(
+            val btGoogle = requireView().findViewById<Button>(
                     R.id.donations__google_android_market_donate_button)
             btGoogle.setOnClickListener { _ ->
                 try {
@@ -142,10 +140,10 @@ class DonationsFragment : Fragment() {
         /* PayPal */
         mPaypal?.let {
             worked = true
-            val paypalViewStub = view!!.findViewById<ViewStub>(R.id.donations__paypal_stub)
+            val paypalViewStub = requireView().findViewById<ViewStub>(R.id.donations__paypal_stub)
             paypalViewStub.inflate()
 
-            val btPayPal = view!!.findViewById<Button>(R.id.donations__paypal_donate_button)
+            val btPayPal = requireView().findViewById<Button>(R.id.donations__paypal_donate_button)
             btPayPal.setOnClickListener { _ -> donatePayPalOnClick(it) }
         }
 
@@ -153,13 +151,13 @@ class DonationsFragment : Fragment() {
         mBitcoinAddress?.let {
             worked = true
             // inflate bitcoin view into stub
-            val bitcoinViewStub = view!!.findViewById<View>(R.id.donations__bitcoin_stub) as ViewStub
+            val bitcoinViewStub = requireView().findViewById<View>(R.id.donations__bitcoin_stub) as ViewStub
             bitcoinViewStub.inflate()
 
-            val btBitcoin = view!!.findViewById<Button>(R.id.donations__bitcoin_button)
+            val btBitcoin = requireView().findViewById<Button>(R.id.donations__bitcoin_button)
             btBitcoin.setOnClickListener { _ -> donateBitcoinOnClick(it) }
             btBitcoin.setOnLongClickListener {
-                val clipboard = activity!!.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+                val clipboard = requireActivity().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
                 val clip = ClipData.newPlainText(mBitcoinAddress, mBitcoinAddress)
                 clipboard.setPrimaryClip(clip)
                 Toast.makeText(activity, R.string.donations__bitcoin_toast_copy, Toast.LENGTH_SHORT).show()
@@ -168,7 +166,7 @@ class DonationsFragment : Fragment() {
         }
 
         if (!worked) {
-            view!!.findViewById<TextView>(R.id.donations__not_available).visibility = View.VISIBLE
+            requireView().findViewById<TextView>(R.id.donations__not_available).visibility = View.VISIBLE
         }
     }
 
@@ -195,7 +193,7 @@ class DonationsFragment : Fragment() {
             Log.d(TAG, "selected item in spinner: $index")
 
         if (mHelper == null)
-            mHelper = GoogleIABHelper(activity!!, mGoogleCallback)
+            mHelper = GoogleIABHelper(requireActivity(), mGoogleCallback)
 
         if (mDebug) {
             // when debugging, choose android.test.x item
@@ -218,8 +216,6 @@ class DonationsFragment : Fragment() {
         uriBuilder.appendQueryParameter("lc", "US")
         uriBuilder.appendQueryParameter("item_name", data.third)
         uriBuilder.appendQueryParameter("no_note", "1")
-        // uriBuilder.appendQueryParameter("no_note", "0");
-        // uriBuilder.appendQueryParameter("cn", "Note to the developer");
         uriBuilder.appendQueryParameter("no_shipping", "1")
         uriBuilder.appendQueryParameter("currency_code", data.second)
         val payPalUri = uriBuilder.build()
@@ -233,7 +229,7 @@ class DonationsFragment : Fragment() {
         val title = resources.getString(R.string.donations__paypal)
         val chooser = Intent.createChooser(viewIntent, title)
 
-        if (viewIntent.resolveActivity(activity!!.packageManager) != null) {
+        if (viewIntent.resolveActivity(requireActivity().packageManager) != null) {
             startActivity(chooser)
         } else {
             openDialog(R.drawable.alert, R.string.donations__alert_dialog_title,

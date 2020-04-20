@@ -8,7 +8,6 @@
         android:layout_height="wrap_content"
         android:isScrollContainer="true"
         android:orientation="vertical"
-        android:padding="15dp"
         android:scrollbars="vertical" >
 
         <TextView
