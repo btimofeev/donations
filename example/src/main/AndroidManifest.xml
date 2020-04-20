@@ -7,7 +7,8 @@
         android:icon="@drawable/ic_launcher"
         android:allowBackup="false"
         android:label="Donations Example"
-        tools:ignore="GoogleAppIndexingWarning">
+        tools:ignore="GoogleAppIndexingWarning"
+        android:supportsRtl="true">
         <activity
             android:name=".DonationsActivity"
             android:label="Donations">
