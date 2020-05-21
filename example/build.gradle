@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 
 dependencies {
+    implementation 'com.google.android.material:material:1.1.0'
     implementation 'androidx.fragment:fragment:1.2.4'
     implementation project(':Donations')
 }
@@ -10,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId "org.sufficientlysecure.donations.example"
-        minSdkVersion 14
+        minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"

@@ -8,7 +8,8 @@
         android:allowBackup="false"
         android:label="Donations Example"
         tools:ignore="GoogleAppIndexingWarning"
-        android:supportsRtl="true">
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MaterialComponents.Light">
         <activity
             android:name=".DonationsActivity"
             android:label="Donations">

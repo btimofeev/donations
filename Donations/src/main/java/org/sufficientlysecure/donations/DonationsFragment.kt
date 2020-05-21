@@ -175,6 +175,7 @@ class DonationsFragment : Fragment() {
      */
     internal fun openDialog(icon: Int, title: Int, message: String) {
         val dialogBuilder = AlertDialog.Builder(activity)
+
         dialogBuilder.setIcon(icon)
         dialogBuilder.setTitle(title)
         dialogBuilder.setMessage(message)

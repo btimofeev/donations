@@ -18,6 +18,8 @@ package org.sufficientlysecure.donations.example;
 
 import android.content.Intent;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
@@ -25,7 +27,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import org.sufficientlysecure.donations.DonationsFragment;
 
-public class DonationsActivity extends FragmentActivity {
+public class DonationsActivity extends AppCompatActivity {
 
     /**
      * Google
