@@ -30,6 +30,7 @@ import android.view.ViewGroup
 import android.view.ViewStub
 import android.widget.*
 import androidx.fragment.app.Fragment
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import org.sufficientlysecure.donations.util.GoogleIABHelper
 import org.sufficientlysecure.donations.util.GoogleIABListener
 
@@ -174,7 +175,7 @@ class DonationsFragment : Fragment() {
      * Open dialog
      */
     internal fun openDialog(icon: Int, title: Int, message: String) {
-        val dialogBuilder = AlertDialog.Builder(activity)
+        val dialogBuilder = MaterialAlertDialogBuilder(activity)
 
         dialogBuilder.setIcon(icon)
         dialogBuilder.setTitle(title)
