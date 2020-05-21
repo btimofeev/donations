@@ -15,7 +15,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:text="@string/donations__description"
-            android:textAppearance="@android:style/TextAppearance.Small" />
+            android:textAppearance="@android:style/TextAppearance.Small"
+            android:layout_marginBottom="10dp" />
 
         <ViewStub
             android:id="@+id/donations__google_stub"
