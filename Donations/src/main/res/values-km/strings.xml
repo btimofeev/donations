@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="donations__button_close">"បិទ"</string>
+    <string name="donations__description">"តើអ្នកយល់ថាកម្មវិធីនេះមានប្រយោជន៍ឬទេ? អ្នកអាចជួយ​អ្នក​អភិវឌ្ឍន៍​នៃកម្មវិធីនេះដោយការបរិច្ចាគបាន!"</string>
+    <string name="donations__google_android_market">"Google​ Play Store"</string>
+    <string name="donations__google_android_market_not_supported_title">"ការបរិច្ចាគក្នុងកម្មវិធីមិនត្រូវបានទទួលស្គាល់នោះទេ"</string>
+    <string name="donations__google_android_market_not_supported">"ការបរិច្ចាគក្នុងកម្មវិធីមិនត្រូវបានទទួលស្គាល់។ តើកម្មវិធី​Google Play Storeរបស់អ្នកត្រូវបានបញ្ចូលត្រឹមត្រូវដែរទេ?
+"</string>
+    <string name="donations__google_android_market_description">"ការគិតថ្លៃរបស់Googleគឺ30%"</string>
+    <string name="donations__google_android_market_donate_button">"បរិច្ចាគ!"</string>
+    <string name="donations__google_android_market_text">"ប៉ុន្មាន?"</string>
+    <string name="donations__paypal">"PayPal"</string>
+    <string name="donations__paypal_description">"អ្នកអាចជ្រើសរើសទឹកប្រាក់ដែលអ្នកចង់បរិច្ចាគក្រោយពេលអ្នកចុចប៊ូតុងនេះហើយ!"</string>
+    <string name="donations__thanks_dialog_title">"អរគុណ!"</string>
+    <string name="donations__thanks_dialog">"សូមអរគុណសម្រាប់ការបរិច្ចាគ! ខ្ញុំពិតជាពេញចិត្តនឹងការបរិច្ចាគនេះណាស់!"</string>
+    <string name="donations__alert_dialog_title">"មានកំហុសមួយបានកើតឡើង"</string>
+    <string name="donations__alert_dialog_no_browser">"គ្មានកម្មវិធីសម្រាប់បើកគេហទំព័រទេ!"</string>
+    <string name="donations__bitcoin">"Bitcoin"</string>
+    <string name="donations__bitcoin_description">"ផ្ញើចំនួនទឹកប្រាក់ណាមួយនៃ bitcoin ទៅអ្នកអភិវឌ្ឍន៍។  ចុចនិងសង្កត់ប៊ូតុងដើម្បីចម្លងaddress។"</string>
+    <string name="donations__bitcoin_send_bitcoin_button">"ផ្ញើ​ bitcoin!"</string>
+    <string name="donations__bitcoin_toast_copy">"Address របស់ Bitcoin ត្រូវបានចម្លងទៅclipboard!"</string>
+    <string name="donate_unavailable">"ជាអកុសលអ្នកមិនអាចបរិច្ចាគដោយស្វ័យប្រវត្តិទេឥឡូវនេះ។  សូមទាក់ទងអ្នកអភិវឌ្ឍន៍ដើម្បីសួរពីរបៀបបរិច្ចាគ។"</string>
+</resources>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="donations__button_close">"Schließen"</string>
-    <string name="donations__description">"Finden Sie diese Anwendung nützlich?\
-Dann unterstützen Sie die Entwicklung durch eine Spende!"</string>
+    <string name="donations__description">"Findest Du diese Anwendung nützlich?\
+Dann unterstütze die Entwicklung durch eine Spende!"</string>
     <string name="donations__google_android_market">"Google Play Store"</string>
     <string name="donations__google_android_market_not_supported_title">"In-App-Spenden werden nicht unterstützt."</string>
     <string name="donations__google_android_market_not_supported">"In-App-Spenden werden nicht unterstützt. Ist »Google Play Store« korrekt installiert?"</string>
@@ -10,7 +10,7 @@ Dann unterstützen Sie die Entwicklung durch eine Spende!"</string>
     <string name="donations__google_android_market_donate_button">"Spende!"</string>
     <string name="donations__google_android_market_text">"Wie viel?"</string>
     <string name="donations__paypal">"PayPal"</string>
-    <string name="donations__paypal_description">"Sie können die Höhe der Spende auswählen, nach dem Sie auf den Knopf geklickt haben!"</string>
+    <string name="donations__paypal_description">"Du kannst die Höhe der Spende auswählen, nach dem du auf den Knopf geklickt hast!"</string>
     <string name="donations__thanks_dialog_title">"Danke!"</string>
     <string name="donations__thanks_dialog">"Danke für die Spende!
 Ich weiß es wirklich zu schätzen!"</string>
