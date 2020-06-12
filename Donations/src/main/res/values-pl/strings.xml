@@ -1,24 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <string name="donations__button_close">"Zamknij"</string>
-    <string name="donations__description">"Czy uważasz tę aplikację za przydatną?
-Wesprzyj jej twórcę wysyłając mu dotację!"</string>
-    <string name="donations__google_android_market">"Sklep Google Play"</string>
-    <string name="donations__google_android_market_not_supported_title">"Wsparcie poprzez płatność z aplikacji nie jest dostępne."</string>
-    <string name="donations__google_android_market_not_supported">"Brak wsparcia dla wbudowanych płatności. Czy aplikacja Sklep Google Play jest zainstalowana prawidłowo?"</string>
-    <string name="donations__google_android_market_description">"Google nalicza opłatę w wysokości 30%"</string>
-    <string name="donations__google_android_market_donate_button">"Przekaż!"</string>
-    <string name="donations__google_android_market_text">"Kwota do przekazania?"</string>
-    <string name="donations__paypal">"PayPal"</string>
-    <string name="donations__paypal_description">"Wybór kwoty do przekazania nastąpi po kliknięciu przycisku \"Przekaż\"!"</string>
-    <string name="donations__thanks_dialog_title">"Dzięki!"</string>
-    <string name="donations__thanks_dialog">"Dziękuję za wsparcie!
-Naprawdę to doceniam!"</string>
-    <string name="donations__alert_dialog_title">"Wystąpił błąd"</string>
-    <string name="donations__alert_dialog_no_browser">"Brak przeglądarki! Nie można otworzyć strony www."</string>
-    <string name="donations__bitcoin">"Bitcoin"</string>
-    <string name="donations__bitcoin_description">"Wyślij dowolną ilość bitcoinów developerowi. Naciśnij i przytrzymaj przycisk aby skopiować adres."</string>
-    <string name="donations__bitcoin_send_bitcoin_button">"Wyślij bitcoiny!"</string>
-    <string name="donations__bitcoin_toast_copy">"Adres Bitcoin został skopiowany do schowka!"</string>
-    <string name="donate_unavailable">"Niestety, nie możesz teraz przekazać dotacji. Skontaktuj się z developerem aby spytać o inne możliwości przesłania dotacji."</string>
+	<string name="donations__button_close">Zamknij</string>
+	<string name="donations__description">Czy uważasz tę aplikację za przydatną\?\nWesprzyj jej twórcę wysyłając mu dotację!</string>
+	<string name="donations__google_android_market">Sklep Google Play</string>
+	<string name="donations__google_android_market_not_supported_title">Wsparcie poprzez płatność z aplikacji nie jest dostępne.</string>
+	<string name="donations__google_android_market_not_supported">Brak wsparcia dla wbudowanych płatności. Czy aplikacja Sklep Google Play jest zainstalowana prawidłowo\?</string>
+	<string name="donations__google_android_market_description">Google nalicza opłatę w wysokości 30%</string>
+	<string name="donations__google_android_market_donate_button">Przekaż!</string>
+	<string name="donations__google_android_market_text">Kwota do przekazania\?</string>
+	<string name="donations__paypal">PayPal</string>
+	<string name="donations__paypal_description">Wybór kwoty do przekazania nastąpi po kliknięciu przycisku \&quot;Przekaż\&quot;!</string>
+	<string name="donations__thanks_dialog_title">Dzięki!</string>
+	<string name="donations__thanks_dialog">Dziękuję za wsparcie!\nNaprawdę to doceniam!</string>
+	<string name="donations__alert_dialog_title">Wystąpił błąd</string>
+	<string name="donations__alert_dialog_no_browser">Brak przeglądarki! Nie można otworzyć strony www.</string>
+	<string name="donations__bitcoin">Bitcoin</string>
+	<string name="donations__bitcoin_description">Wyślij dowolną ilość bitcoinów developerowi. Naciśnij i przytrzymaj przycisk aby skopiować adres.</string>
+	<string name="donations__bitcoin_send_bitcoin_button">Wyślij bitcoiny!</string>
+	<string name="donations__bitcoin_toast_copy">Adres Bitcoin został skopiowany do schowka!</string>
+	<string name="donate_unavailable">Niestety, nie możesz teraz przekazać dotacji. Skontaktuj się z developerem aby spytać o inne możliwości przesłania dotacji.</string>
 </resources>

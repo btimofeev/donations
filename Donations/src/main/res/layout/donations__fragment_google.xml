@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:prompt="@string/donations__google_android_market_text"
-        app:layout_constraintTop_toBottomOf="@id/donations__google_android_market_description"
+        app:layout_constraintTop_toBottomOf="@id/donations__google_barrier"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 

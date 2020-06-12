@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<string name="donations__button_close">Tancar</string>
+	<string name="donations__description">Trobes útil aquesta aplicació\?\nDóna suport al seu desenvolupament enviant una donació al desenvolupador.</string>
+	<string name="donations__google_android_market">Google Play Store</string>
+	<string name="donations__google_android_market_not_supported_title">Les donacions integrades a l\&apos;aplicació no són compatibles.</string>
+	<string name="donations__google_android_market_not_supported">Les donacions integrades a l\&apos;aplicació no són compatibles. Google Play Store està instal·lat correctament\?</string>
+	<string name="donations__google_android_market_description">Google cobra una quota del 30%</string>
+	<string name="donations__google_android_market_donate_button">Donar!</string>
+	<string name="donations__google_android_market_text">Quant\?</string>
+	<string name="donations__paypal">PayPal</string>
+	<string name="donations__paypal_description">Podeu triar la quantitat que voleu donar després de fer clic al botó!</string>
+	<string name="donations__thanks_dialog_title">Gràcies!</string>
+	<string name="donations__thanks_dialog">Gràcies per la teva donació!\nHo agraeixo molt!</string>
+	<string name="donations__alert_dialog_title">S\&apos;ha produït un error</string>
+	<string name="donations__alert_dialog_no_browser">No s\&apos;ha trobat cap navegador per obrir un lloc web.</string>
+	<string name="donations__bitcoin">Bitcoin</string>
+	<string name="donations__bitcoin_description">Envia qualsevol quantitat de bitcoin al desenvolupador. Mantingueu premut el botó per copiar l\&apos;adreça.</string>
+	<string name="donations__bitcoin_send_bitcoin_button">Envia bitcoin!</string>
+	<string name="donations__bitcoin_toast_copy">L’adreça Bitcoin s’ha copiat al porta-retalls!</string>
+	<string name="donate_unavailable">Malauradament, no podeu fer una donació automàtica ara mateix. Si us plau, poseu-vos en contacte amb el desenvolupador per demanar com fer una donació.</string>
+</resources>

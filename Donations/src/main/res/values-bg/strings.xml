@@ -1,24 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <string name="donations__button_close">"Затвори"</string>
-    <string name="donations__description">"Смятате ли, че това приложение е полезно?
-Подкрепете неговото развитие, като изпратите дарение на предприемача!"</string>
-    <string name="donations__google_android_market">"Google Play магазин"</string>
-    <string name="donations__google_android_market_not_supported_title">"Дарения чрез приложението не се поддържат."</string>
-    <string name="donations__google_android_market_not_supported">"Дарения чрез приложението не се поддържат. Инсталиран ли е правилно магазина Google Play?"</string>
-    <string name="donations__google_android_market_description">"Google начислява такса от 30%"</string>
-    <string name="donations__google_android_market_donate_button">"Дарете!"</string>
-    <string name="donations__google_android_market_text">"Колко?"</string>
-    <string name="donations__paypal">"PayPal"</string>
-    <string name="donations__paypal_description">"Можете да изберете колко искате да дарите след натискане на бутона!"</string>
-    <string name="donations__thanks_dialog_title">"Благодаря!"</string>
-    <string name="donations__thanks_dialog">"Благодаря за дарението!
-Наистина оценявам това!"</string>
-    <string name="donations__alert_dialog_title">"Възникна грешка"</string>
-    <string name="donations__alert_dialog_no_browser">"Не е намерен браузър, който да отвори сайта!"</string>
-    <string name="donations__bitcoin">"Bitcoin"</string>
-    <string name="donations__bitcoin_description">"Изпратете каквото и да е количество биткойни на разработчика. Натиснете и задръжте бутона, за да копирате адреса."</string>
-    <string name="donations__bitcoin_send_bitcoin_button">"Изпратете биткойни!"</string>
-    <string name="donations__bitcoin_toast_copy">"Биткойн адресът е копиран в клипборда!"</string>
-    <string name="donate_unavailable">"За съжаление, не можете да дарите автоматично точно сега. Моля свържете се със разработчика за да попитате как да дарите."</string>
+	<string name="donations__button_close">Затвори</string>
+	<string name="donations__description">Смятате ли, че това приложение е полезно\?\nПодкрепете неговото развитие, като изпратите дарение на предприемача!</string>
+	<string name="donations__google_android_market">Google Play магазин</string>
+	<string name="donations__google_android_market_not_supported_title">Дарения чрез приложението не се поддържат.</string>
+	<string name="donations__google_android_market_not_supported">Дарения чрез приложението не се поддържат. Инсталиран ли е правилно магазина Google Play\?</string>
+	<string name="donations__google_android_market_description">Google начислява такса от 30%</string>
+	<string name="donations__google_android_market_donate_button">Дарете!</string>
+	<string name="donations__google_android_market_text">Колко\?</string>
+	<string name="donations__paypal">PayPal</string>
+	<string name="donations__paypal_description">Можете да изберете колко искате да дарите след натискане на бутона!</string>
+	<string name="donations__thanks_dialog_title">Благодаря!</string>
+	<string name="donations__thanks_dialog">Благодаря за дарението!\nНаистина оценявам това!</string>
+	<string name="donations__alert_dialog_title">Възникна грешка</string>
+	<string name="donations__alert_dialog_no_browser">Не е намерен браузър, който да отвори сайта!</string>
+	<string name="donations__bitcoin">Bitcoin</string>
+	<string name="donations__bitcoin_description">Изпратете каквото и да е количество биткойни на разработчика. Натиснете и задръжте бутона, за да копирате адреса.</string>
+	<string name="donations__bitcoin_send_bitcoin_button">Изпратете биткойни!</string>
+	<string name="donations__bitcoin_toast_copy">Биткойн адресът е копиран в клипборда!</string>
+	<string name="donate_unavailable">За съжаление, не можете да дарите автоматично точно сега. Моля свържете се със разработчика за да попитате как да дарите.</string>
 </resources>

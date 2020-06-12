@@ -1,23 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <string name="donations__button_close">"Cerrar"</string>
-    <string name="donations__description">"¿Te resulta útil esta aplicación?
-¡Apoya su desarrollo enviando una donación al desarrollador!"</string>
-    <string name="donations__google_android_market">"Google Play Store"</string>
-    <string name="donations__google_android_market_not_supported_title">"Las donaciones desde la aplicación no están soportadas"</string>
-    <string name="donations__google_android_market_not_supported">"No se admiten pagos desde la aplicación. ¿Está la Google Play Store instalada correctamente?"</string>
-    <string name="donations__google_android_market_description">"Google cobra una comisión del 30%"</string>
-    <string name="donations__google_android_market_donate_button">"¡Donar!"</string>
-    <string name="donations__google_android_market_text">"¿Cuánto?"</string>
-    <string name="donations__paypal">"PayPal"</string>
-    <string name="donations__paypal_description">"¡Puedes elegir la cantidad a donar después de pulsar el botón!"</string>
-    <string name="donations__thanks_dialog_title">"¡Gracias!"</string>
-    <string name="donations__thanks_dialog">"¡Gracias por la donación, lo agradezco mucho!"</string>
-    <string name="donations__alert_dialog_title">"Se produjo un error"</string>
-    <string name="donations__alert_dialog_no_browser">"¡No se encontró ningún navegador para abrir una página web!"</string>
-    <string name="donations__bitcoin">"Bitcoin"</string>
-    <string name="donations__bitcoin_description">"Envia cualquier cantidad de Bitcoin al desarrollador. Mantén presionado el botón para copiar la dirección."</string>
-    <string name="donations__bitcoin_send_bitcoin_button">"¡Envía bitcoins!"</string>
-    <string name="donations__bitcoin_toast_copy">"¡La dirección de Bitcoin se ha copiado en el portapapeles!"</string>
-    <string name="donate_unavailable">"Desafortunadamente, no es posible donar automáticamente en este momento. Por favor, contacta con el desarrollador para preguntar como donar."</string>
+	<string name="donations__button_close">Cerrar</string>
+	<string name="donations__description">¿Te resulta útil esta aplicación\?\n¡Apoya su desarrollo enviando una donación al desarrollador!</string>
+	<string name="donations__google_android_market">Google Play Store</string>
+	<string name="donations__google_android_market_not_supported_title">Las donaciones desde la aplicación no están soportadas</string>
+	<string name="donations__google_android_market_not_supported">No se admiten pagos desde la aplicación. ¿Está la Google Play Store instalada correctamente\?</string>
+	<string name="donations__google_android_market_description">Google cobra una comisión del 30%</string>
+	<string name="donations__google_android_market_donate_button">¡Donar!</string>
+	<string name="donations__google_android_market_text">¿Cuánto\?</string>
+	<string name="donations__paypal">PayPal</string>
+	<string name="donations__paypal_description">¡Puedes elegir la cantidad a donar después de pulsar el botón!</string>
+	<string name="donations__thanks_dialog_title">¡Gracias!</string>
+	<string name="donations__thanks_dialog">¡Gracias por la donación, lo agradezco mucho!</string>
+	<string name="donations__alert_dialog_title">Se produjo un error</string>
+	<string name="donations__alert_dialog_no_browser">¡No se encontró ningún navegador para abrir una página web!</string>
+	<string name="donations__bitcoin">Bitcoin</string>
+	<string name="donations__bitcoin_description">Envia cualquier cantidad de Bitcoin al desarrollador. Mantén presionado el botón para copiar la dirección.</string>
+	<string name="donations__bitcoin_send_bitcoin_button">¡Envía bitcoins!</string>
+	<string name="donations__bitcoin_toast_copy">¡La dirección de Bitcoin se ha copiado en el portapapeles!</string>
+	<string name="donate_unavailable">Desafortunadamente, no es posible donar automáticamente en este momento. Por favor, contacta con el desarrollador para preguntar como donar.</string>
 </resources>
