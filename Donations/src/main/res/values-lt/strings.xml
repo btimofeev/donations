@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<string name="donations__button_close">Uždaryti</string>
+	<string name="donations__description">Radai šią programą naudingą\? Palaikykite jos kūrima aukodami.</string>
+	<string name="donations__google_android_market">„Play“ Parduotuvė</string>
+	<string name="donations__google_android_market_not_supported_title">Aukos programos viduje nepalaikomos.</string>
+	<string name="donations__google_android_market_not_supported">Aukos programos viduje nepalaikomos. Ar „Play“ Parduotuvė įdiegta teisingai\?</string>
+	<string name="donations__google_android_market_description">Google nuskaičiuoja 30% sumos.</string>
+	<string name="donations__google_android_market_donate_button">Paaukok!</string>
+	<string name="donations__google_android_market_text">Kiek\?</string>
+	<string name="donations__paypal">PayPal</string>
+	<string name="donations__paypal_description">Spustelėję mygtuką galite pasirinkti, kiek norite paaukoti!</string>
+	<string name="donations__thanks_dialog_title">Ačiū!</string>
+	<string name="donations__thanks_dialog">Ačiū, kad paaukojote!\nAš tai labai vertinu!</string>
+	<string name="donations__alert_dialog_title">Įvyko klaida</string>
+	<string name="donations__alert_dialog_no_browser">Nerasta naršyklės, leidžiančios atidaryti svetainę!</string>
+	<string name="donations__bitcoin">„Bitcoin“</string>
+	<string name="donations__bitcoin_description">Atsiųskite bet kokį „Bitcoin“ kiekį kūrėjui. Laikykite mygtuką norėdami nukopijuoti adresą.</string>
+	<string name="donations__bitcoin_send_bitcoin_button">Atsiųsk bitkoiną!</string>
+	<string name="donations__bitcoin_toast_copy">„Bitcoin“ adresas nukopijuotas į iškarpinę!</string>
+	<string name="donate_unavailable">Deja, šiuo metu negalima aukoti automatiškai. Kreipkitės į programos kūrėją ir paklauskite, kaip aukoti.</string>
+</resources>
